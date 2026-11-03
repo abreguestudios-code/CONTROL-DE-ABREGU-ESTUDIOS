@@ -1,0 +1,1049 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Control de inventario audiovisual de Abregu">
+
+    <title>Inventario | Abregu Studios</title>
+
+    <link rel="stylesheet"
+          href="../assets/css/styles.css">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- =====================================
+         MENU LATERAL
+    ====================================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <img
+                src="../assets/img/logo-audiovisual.png"
+                alt="Abregu Studios"
+                class="logo-img"
+            >
+
+            <p>Sistema de gestión audiovisual</p>
+
+        </div>
+
+        <nav class="sidebar-nav"
+             aria-label="Menú principal">
+
+            <p class="nav-title">PRINCIPAL</p>
+
+            <a href="../index.html"
+               class="nav-item">
+                Resumen
+            </a>
+
+            <a href="produccion.html"
+               class="nav-item">
+                Producción audiovisual
+            </a>
+
+            <a href="lives.html"
+               class="nav-item">
+                LIVE Control
+            </a>
+
+            <a href="tareas.html"
+               class="nav-item">
+                Mis tareas
+            </a>
+
+            <a href="agenda.html"
+               class="nav-item">
+                Agenda semanal
+            </a>
+
+            <p class="nav-title">ADMINISTRACIÓN</p>
+
+            <a href="clientes.html"
+               class="nav-item">
+                Clientes y ventas
+            </a>
+
+            <a href="inventario.html"
+               class="nav-item active"
+               aria-current="page">
+                Inventario
+            </a>
+
+            <a href="asistencia.html"
+               class="nav-item">
+                Control de asistencia
+            </a>
+
+            <a href="informes.html"
+               class="nav-item">
+                Informes y puntos
+            </a>
+
+            <a href="presupuesto.html" class="nav-item">
+    Presupuesto y rentabilidad
+</a>
+
+            <p class="nav-title">SISTEMA</p>
+
+            <a href="equipo.html"
+               class="nav-item">
+                Equipo y permisos
+            </a>
+
+            <a href="configuracion.html"
+               class="nav-item">
+                Configuración
+            </a>
+
+        </nav>
+
+        <div class="sidebar-profile">
+
+            <div class="profile-avatar">SI</div>
+
+            <div class="profile-info">
+
+                <h3>SAMGIUK INGA</h3>
+
+                <p>Productor audiovisual principal</p>
+
+                <span>Administrador principal</span>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================
+         CONTENIDO PRINCIPAL
+    ====================================== -->
+
+    <main class="main-content">
+
+        <!-- ENCABEZADO -->
+
+        <header class="main-header">
+
+            <div class="header-title">
+
+                <p class="subtitle">
+                    CONTROL PATRIMONIAL
+                </p>
+
+                <h1>Inventario Audiovisual</h1>
+
+                <p>
+                    Controla el equipamiento,
+                    las ubicaciones, los responsables
+                    y el estado de cada dispositivo.
+                </p>
+
+            </div>
+
+            <div class="header-date">
+
+                <span>Encargado del área</span>
+
+                <strong>SAMGIUK INGA</strong>
+
+            </div>
+
+        </header>
+
+
+        <!-- =====================================
+             INDICADORES GENERALES
+        ====================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <h2>Estado del inventario</h2>
+
+                <p>
+                    Equipos bajo control del área
+                </p>
+
+            </div>
+
+            <div class="stats-grid">
+
+                <article class="stat-card">
+
+                    <h3>Total de unidades</h3>
+
+                    <p class="stat-number"
+                       id="inventario-total">0</p>
+
+                    <span>Equipos registrados</span>
+
+                </article>
+
+                <article class="stat-card">
+
+                    <h3>Disponibles</h3>
+
+                    <p class="stat-number"
+                       id="inventario-disponibles">0</p>
+
+                    <span>Listos para utilizar</span>
+
+                </article>
+
+                <article class="stat-card">
+
+                    <h3>En uso o préstamo</h3>
+
+                    <p class="stat-number"
+                       id="inventario-uso">0</p>
+
+                    <span>Equipos asignados</span>
+
+                </article>
+
+                <article class="stat-card">
+
+                    <h3>Con incidencias</h3>
+
+                    <p class="stat-number"
+                       id="inventario-incidencias">0</p>
+
+                    <span>Mantenimiento o daño</span>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             CATEGORIAS
+        ====================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <h2>Categorías de equipamiento</h2>
+
+                <p>
+                    Organización del inventario audiovisual
+                </p>
+
+            </div>
+
+            <div class="productions-list">
+
+                <article class="production-card">
+
+                    <h3>01 — COMPUTACIÓN</h3>
+
+                    <p>
+                        Computadoras, monitores,
+                        teclados, mouse, unidades
+                        de almacenamiento y periféricos.
+                    </p>
+
+                </article>
+
+                <article class="production-card">
+
+                    <h3>02 — CÁMARAS</h3>
+
+                    <p>
+                        Cámaras profesionales,
+                        cámaras compactas, capturadoras
+                        y accesorios de cámara.
+                    </p>
+
+                </article>
+
+                <article class="production-card">
+
+                    <h3>03 — LENTES Y ÓPTICA</h3>
+
+                    <p>
+                        Lentes, filtros, adaptadores
+                        y accesorios ópticos.
+                    </p>
+
+                </article>
+
+                <article class="production-card">
+
+                    <h3>04 — AUDIO</h3>
+
+                    <p>
+                        Micrófonos, consolas,
+                        interfaces, audífonos
+                        y transmisores inalámbricos.
+                    </p>
+
+                </article>
+
+                <article class="production-card">
+
+                    <h3>05 — ILUMINACIÓN</h3>
+
+                    <p>
+                        Luces, paneles LED,
+                        modificadores, reflectores
+                        y accesorios.
+                    </p>
+
+                </article>
+
+                <article class="production-card">
+
+                    <h3>06 — CABLES Y CONEXIONES</h3>
+
+                    <p>
+                        HDMI, USB, XLR, adaptadores,
+                        extensiones y conectores.
+                    </p>
+
+                </article>
+
+                <article class="production-card">
+
+                    <h3>07 — SOPORTES Y ACCESORIOS</h3>
+
+                    <p>
+                        Trípodes, brazos, soportes,
+                        estabilizadores, baterías
+                        y cargadores.
+                    </p>
+
+                </article>
+
+                <article class="production-card">
+
+                    <h3>08 — OTROS</h3>
+
+                    <p>
+                        Elementos y materiales
+                        audiovisuales que no encajen
+                        en las categorías anteriores.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             REGISTRAR EQUIPO
+        ====================================== -->
+
+        <section class="dashboard-section"
+                 id="nuevo-equipo">
+
+            <div class="section-header">
+
+                <h2>Registrar equipo</h2>
+
+                <p>
+                    Crear una ficha de inventario
+                </p>
+
+            </div>
+
+            <form id="form-inventario"
+                  class="production-form">
+
+                <!-- NOMBRE -->
+
+                <div class="form-group">
+
+                    <label for="equipo-nombre">
+                        Nombre del equipo
+                    </label>
+
+                    <input
+                        type="text"
+                        id="equipo-nombre"
+                        placeholder="Ej. Sony FX30"
+                        maxlength="120"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- CATEGORIA -->
+
+                <div class="form-group">
+
+                    <label for="equipo-categoria">
+                        Categoría
+                    </label>
+
+                    <select
+                        id="equipo-categoria"
+                        required
+                    >
+
+                        <option value="">
+                            Seleccionar categoría
+                        </option>
+
+                        <option value="computacion">
+                            Computación
+                        </option>
+
+                        <option value="camaras">
+                            Cámaras
+                        </option>
+
+                        <option value="lentes">
+                            Lentes y óptica
+                        </option>
+
+                        <option value="audio">
+                            Audio
+                        </option>
+
+                        <option value="iluminacion">
+                            Iluminación
+                        </option>
+
+                        <option value="cables">
+                            Cables y conexiones
+                        </option>
+
+                        <option value="soportes">
+                            Soportes y accesorios
+                        </option>
+
+                        <option value="otros">
+                            Otros
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- MARCA -->
+
+                <div class="form-group">
+
+                    <label for="equipo-marca">
+                        Marca
+                    </label>
+
+                    <input
+                        type="text"
+                        id="equipo-marca"
+                        placeholder="Ej. Sony"
+                    >
+
+                </div>
+
+
+                <!-- MODELO -->
+
+                <div class="form-group">
+
+                    <label for="equipo-modelo">
+                        Modelo
+                    </label>
+
+                    <input
+                        type="text"
+                        id="equipo-modelo"
+                        placeholder="Ej. ILME-FX30"
+                    >
+
+                </div>
+
+
+                <!-- CODIGO INTERNO -->
+
+                <div class="form-group">
+
+                    <label for="equipo-codigo">
+                        Código de inventario
+                    </label>
+
+                    <input
+                        type="text"
+                        id="equipo-codigo"
+                        placeholder="Ej. CAM-001"
+                        maxlength="40"
+                    >
+
+                </div>
+
+
+                <!-- NUMERO DE SERIE -->
+
+                <div class="form-group">
+
+                    <label for="equipo-serie">
+                        Número de serie
+                    </label>
+
+                    <input
+                        type="text"
+                        id="equipo-serie"
+                        placeholder="Si está disponible"
+                    >
+
+                </div>
+
+
+                <!-- CANTIDAD -->
+
+                <div class="form-group">
+
+                    <label for="equipo-cantidad">
+                        Cantidad
+                    </label>
+
+                    <input
+                        type="number"
+                        id="equipo-cantidad"
+                        min="1"
+                        step="1"
+                        value="1"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- ESTADO -->
+
+                <div class="form-group">
+
+                    <label for="equipo-estado">
+                        Estado actual
+                    </label>
+
+                    <select
+                        id="equipo-estado"
+                        required
+                    >
+
+                        <option value="disponible">
+                            Disponible
+                        </option>
+
+                        <option value="uso">
+                            En uso
+                        </option>
+
+                        <option value="prestado">
+                            Prestado
+                        </option>
+
+                        <option value="mantenimiento">
+                            En mantenimiento
+                        </option>
+
+                        <option value="danado">
+                            Dañado
+                        </option>
+
+                        <option value="baja">
+                            Dado de baja
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- CONDICION FISICA -->
+
+                <div class="form-group">
+
+                    <label for="equipo-condicion">
+                        Condición física
+                    </label>
+
+                    <select id="equipo-condicion">
+
+                        <option value="bueno">
+                            Buen estado
+                        </option>
+
+                        <option value="regular">
+                            Estado regular
+                        </option>
+
+                        <option value="observacion">
+                            Con observaciones
+                        </option>
+
+                        <option value="defectuoso">
+                            Defectuoso
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- UBICACION -->
+
+                <div class="form-group">
+
+                    <label for="equipo-ubicacion">
+                        Ubicación actual
+                    </label>
+
+                    <input
+                        type="text"
+                        id="equipo-ubicacion"
+                        placeholder="Ej. Estudio audiovisual"
+                    >
+
+                </div>
+
+
+                <!-- RESPONSABLE -->
+
+                <div class="form-group">
+
+                    <label for="equipo-responsable">
+                        Responsable
+                    </label>
+
+                    <input
+                        type="text"
+                        id="equipo-responsable"
+                        placeholder="Persona a cargo del equipo"
+                    >
+
+                </div>
+
+
+                <!-- FECHA DE REGISTRO -->
+
+                <div class="form-group">
+
+                    <label for="equipo-fecha">
+                        Fecha de registro
+                    </label>
+
+                    <input
+                        type="date"
+                        id="equipo-fecha"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- MANTENIMIENTO -->
+
+                <div class="form-group">
+
+                    <label for="equipo-mantenimiento">
+                        Próxima revisión
+                    </label>
+
+                    <input
+                        type="date"
+                        id="equipo-mantenimiento"
+                    >
+
+                </div>
+
+
+                <!-- ACCESORIOS -->
+
+                <div class="form-group">
+
+                    <label for="equipo-accesorios">
+                        Accesorios incluidos
+                    </label>
+
+                    <textarea
+                        id="equipo-accesorios"
+                        rows="3"
+                        placeholder="Baterías, cargadores, cables, estuche..."
+                    ></textarea>
+
+                </div>
+
+
+                <!-- OBSERVACIONES -->
+
+                <div class="form-group">
+
+                    <label for="equipo-observaciones">
+                        Observaciones
+                    </label>
+
+                    <textarea
+                        id="equipo-observaciones"
+                        rows="5"
+                        placeholder="Detalles, fallas, estado y recomendaciones..."
+                    ></textarea>
+
+                </div>
+
+
+<!-- SELECCIONAR CATEGORIA DEL INFORME -->
+
+<div class="form-group">
+
+    <label for="reporte-categoria">
+        ¿Qué inventario deseas descargar?
+    </label>
+
+    <select id="reporte-categoria">
+
+        <option value="todos">
+            Inventario general - Todos los equipos
+        </option>
+
+        <option value="computacion">
+            Solo Computación
+        </option>
+
+        <option value="camaras">
+            Solo Cámaras
+        </option>
+
+        <option value="lentes">
+            Solo Lentes y óptica
+        </option>
+
+        <option value="audio">
+            Solo Audio
+        </option>
+
+        <option value="iluminacion">
+            Solo Iluminación
+        </option>
+
+        <option value="cables">
+            Solo Cables y conexiones
+        </option>
+
+        <option value="soportes">
+            Solo Soportes y accesorios
+        </option>
+
+        <option value="otros">
+            Solo Otros
+        </option>
+
+    </select>
+
+</div>
+
+                <!-- ACCIONES -->
+
+                <div class="form-actions">
+
+                    <button
+                        type="submit"
+                        id="guardar-equipo"
+                        disabled
+                    >
+                        Guardar equipo
+                    </button>
+
+                    <button type="reset">
+                        Limpiar formulario
+                    </button>
+
+                </div>
+
+                <p class="helper-text">
+                    Activaremos el registro
+                    cuando creemos inventario.js.
+                </p>
+
+            </form>
+
+        </section>
+
+
+        <!-- =====================================
+             INVENTARIO GENERAL
+        ====================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <h2>Inventario general</h2>
+
+                <p>
+                    Equipos registrados
+                    y estado actualizado
+                </p>
+
+            </div>
+
+            <div class="production-filters">
+
+                <label for="buscar-equipo">
+                    Buscar equipo
+                </label>
+
+                <input
+                    type="search"
+                    id="buscar-equipo"
+                    placeholder="Nombre, código o modelo"
+                    disabled
+                >
+
+                <label for="filtro-categoria">
+                    Categoría
+                </label>
+
+                <select
+                    id="filtro-categoria"
+                    disabled
+                >
+
+                    <option value="todos">
+                        Todas las categorías
+                    </option>
+
+                    <option value="computacion">
+                        Computación
+                    </option>
+
+                    <option value="camaras">
+                        Cámaras
+                    </option>
+
+                    <option value="lentes">
+                        Lentes
+                    </option>
+
+                    <option value="audio">
+                        Audio
+                    </option>
+
+                    <option value="iluminacion">
+                        Iluminación
+                    </option>
+
+                    <option value="cables">
+                        Cables
+                    </option>
+
+                    <option value="soportes">
+                        Soportes y accesorios
+                    </option>
+
+                    <option value="otros">
+                        Otros
+                    </option>
+
+                </select>
+
+                <label for="filtro-estado-equipo">
+                    Estado
+                </label>
+
+                <select
+                    id="filtro-estado-equipo"
+                    disabled
+                >
+
+                    <option value="todos">
+                        Todos los estados
+                    </option>
+
+                    <option value="disponible">
+                        Disponible
+                    </option>
+
+                    <option value="uso">
+                        En uso
+                    </option>
+
+                    <option value="prestado">
+                        Prestado
+                    </option>
+
+                    <option value="mantenimiento">
+                        Mantenimiento
+                    </option>
+
+                    <option value="danado">
+                        Dañado
+                    </option>
+
+                    <option value="baja">
+                        Dado de baja
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div
+                id="lista-inventario"
+                class="productions-list"
+            >
+
+                <div class="empty-state">
+
+                    <h3>No hay equipos registrados</h3>
+
+                    <p>
+                        Registra tus equipos
+                        o importa tu inventario
+                        cuando activemos el módulo.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             CONTROL DE RESPONSABILIDAD
+        ====================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <h2>Control de responsabilidad</h2>
+
+                <p>
+                    Equipos prestados,
+                    asignados o en mantenimiento
+                </p>
+
+            </div>
+
+            <div
+                id="lista-equipos-control"
+                class="productions-list"
+            >
+
+                <div class="empty-state">
+
+                    <h3>Sin movimientos registrados</h3>
+
+                    <p>
+                        Aquí aparecerán los equipos
+                        que estén en uso, prestados,
+                        dañados o en mantenimiento.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             INFORMES DE INVENTARIO
+        ====================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <h2>Informes de inventario</h2>
+
+                <p>
+                    Revisión administrativa
+                    del equipamiento
+                </p>
+
+            </div>
+
+            <div class="production-card">
+
+                <h3>Reporte general</h3>
+
+                <p>
+                    Generaremos un documento
+                    con el inventario completo,
+                    sus responsables, estados,
+                    ubicaciones y observaciones.
+                </p>
+
+                <div class="form-actions">
+
+                    <button
+                        type="button"
+                        id="exportar-inventario"
+                        disabled
+                    >
+                        Descargar informe PDF
+                    </button>
+
+                </div>
+
+                <p class="helper-text">
+                    La exportación se habilitará
+                    con inventario.js.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             PIE DE PAGINA
+        ====================================== -->
+
+        <footer class="main-footer">
+
+            <p>ABREGU STUDIOS</p>
+
+            <span>
+                Control de activos audiovisuales
+            </span>
+
+            <small>
+                Responsable: SAMGIUK INGA
+            </small>
+
+        </footer>
+
+    </main>
+
+</div>
+
+<!-- JAVASCRIPT DE INVENTARIO -->
+
+
+<!-- SISTEMA DE INVENTARIO -->
+<script
+    src="../assets/js/inventario.js"
+    defer>
+</script>
+
+
+</body>
+</html>

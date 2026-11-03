@@ -1,0 +1,780 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Control de transmisiones en vivo de Abregu Studios.">
+
+    <title>LIVE Control | Abregu Studios</title>
+
+    <link rel="stylesheet"
+          href="../assets/css/styles.css">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- =====================================
+         MENÚ LATERAL
+    ====================================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <img
+                src="../assets/img/logo-audiovisual.png"
+                alt="Abregu Studios"
+                class="logo-img"
+            >
+
+            <p>Sistema de gestión audiovisual</p>
+
+        </div>
+
+        <nav class="sidebar-nav"
+             aria-label="Menú principal">
+
+            <p class="nav-title">PRINCIPAL</p>
+
+            <a href="../index.html"
+               class="nav-item">
+                Resumen
+            </a>
+
+            <a href="produccion.html"
+               class="nav-item">
+                Producción audiovisual
+            </a>
+
+            <a href="lives.html"
+               class="nav-item active"
+               aria-current="page">
+                LIVE Control
+            </a>
+
+            <a href="tareas.html" class="nav-item">
+                Mis tareas
+            </a>
+
+            <a href="agenda.html" class="nav-item">
+                Agenda semanal
+            </a>
+
+            <p class="nav-title">ADMINISTRACIÓN</p>
+
+            <a href="clientes.html" class="nav-item">
+                Clientes y ventas
+            </a>
+
+            <a href="inventario.html" class="nav-item">
+                Inventario
+            </a>
+
+            <a href="asistencia.html" class="nav-item">
+                Control de asistencia
+            </a>
+
+            <a href="informes.html" class="nav-item">
+                Informes y puntos
+            </a>
+
+            <a href="presupuesto.html" class="nav-item">
+    Presupuesto y rentabilidad
+</a>
+
+            <p class="nav-title">SISTEMA</p>
+
+            <a href="equipo.html" class="nav-item">
+                Equipo y permisos
+            </a>
+
+            <a href="configuracion.html" class="nav-item">
+                Configuración
+            </a>
+
+        </nav>
+
+        <div class="sidebar-profile">
+
+            <div class="profile-avatar">SI</div>
+
+            <div class="profile-info">
+                <h3>SAMGIUK INGA</h3>
+                <p>Productor audiovisual principal</p>
+                <span>Administrador principal</span>
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================
+         CONTENIDO PRINCIPAL
+    ====================================== -->
+
+    <main class="main-content">
+
+        <!-- ENCABEZADO -->
+
+        <header class="main-header">
+
+            <div class="header-title">
+
+                <p class="subtitle">
+                    CENTRO DE TRANSMISIONES
+                </p>
+
+                <h1>LIVE Control</h1>
+
+                <p>
+                    Planifica, prepara y supervisa
+                    todas las transmisiones en vivo.
+                </p>
+
+            </div>
+
+            <div class="header-date">
+                <span>Responsable principal</span>
+                <strong>SAMGIUK INGA</strong>
+            </div>
+
+        </header>
+
+
+        <!-- =====================================
+             INDICADORES
+        ====================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+                <h2>Estado de transmisiones</h2>
+                <p>Control semanal de LIVE</p>
+            </div>
+
+            <div class="stats-grid">
+
+                <article class="stat-card">
+                    <h3>LIVE programados</h3>
+
+                    <p class="stat-number"
+                       id="lives-programados">0</p>
+
+                    <span>Confirmados esta semana</span>
+                </article>
+
+                <article class="stat-card">
+                    <h3>LIVE realizados</h3>
+
+                    <p class="stat-number"
+                       id="lives-realizados">0</p>
+
+                    <span>Transmisiones finalizadas</span>
+                </article>
+
+                <article class="stat-card">
+                    <h3>Preparación pendiente</h3>
+
+                    <p class="stat-number"
+                       id="lives-pendientes">0</p>
+
+                    <span>Transmisiones por preparar</span>
+                </article>
+
+                <article class="stat-card">
+                    <h3>Temas pendientes</h3>
+
+                    <p class="stat-number"
+                       id="temas-pendientes">0</p>
+
+                    <span>Programas sin tema definido</span>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             PROGRAMACIÓN SEMANAL
+        ====================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+                <h2>Programación semanal</h2>
+                <p>Calendario habitual de transmisiones</p>
+            </div>
+
+            <div class="dashboard-columns">
+
+                <section class="dashboard-section">
+
+                    <h2>Lunes</h2>
+
+                    <div class="live-list">
+
+                        <article class="live-item">
+                            <span>6:00 P. M.</span>
+                            <h3>Programa Jóvenes</h3>
+                            <p>Juan Infante · Programado</p>
+                        </article>
+
+                        <article class="live-item">
+                            <span>7:00 P. M.</span>
+                            <h3>JUJU</h3>
+                            <p>Abregu · Programado</p>
+                        </article>
+
+                    </div>
+
+                </section>
+
+
+                <section class="dashboard-section">
+
+                    <h2>Martes</h2>
+
+                    <div class="live-list">
+
+                        <article class="live-item">
+                            <span>HORA POR CONFIRMAR</span>
+                            <h3>Mujeres Emprendedoras</h3>
+                            <p>Juan Infante</p>
+                        </article>
+
+                        <article class="live-item">
+                            <span>HORA POR PROGRAMAR</span>
+                            <h3>LIVE FUZE</h3>
+                            <p>Transmisión comercial</p>
+                        </article>
+
+                    </div>
+
+                </section>
+
+
+                <section class="dashboard-section">
+
+                    <h2>Miércoles</h2>
+
+                    <div class="live-list">
+                        <article class="live-item">
+                            <span>HORA POR PROGRAMAR</span>
+                            <h3>LIVE FUZE</h3>
+                            <p>Transmisión comercial</p>
+                        </article>
+                    </div>
+
+                </section>
+
+
+                <section class="dashboard-section">
+
+                    <h2>Jueves</h2>
+
+                    <div class="live-list">
+                        <article class="live-item">
+                            <span>OPCIONAL</span>
+                            <h3>LIVE FUZE</h3>
+                            <p>
+                                Según disponibilidad después
+                                de KINTEX y CAEDLA
+                            </p>
+                        </article>
+                    </div>
+
+                </section>
+
+
+                <section class="dashboard-section">
+
+                    <h2>Viernes</h2>
+
+                    <div class="live-list">
+
+                        <article class="live-item">
+                            <span>ANTES DE INTEPA</span>
+                            <h3>LIVE FUZE</h3>
+                            <p>Horario por coordinar</p>
+                        </article>
+
+                        <article class="live-item">
+                            <span>HORA POR CONFIRMAR</span>
+                            <h3>LIVE INTEPA</h3>
+                            <p>Transmisión desde el estudio</p>
+                        </article>
+
+                    </div>
+
+                </section>
+
+
+                <section class="dashboard-section">
+
+                    <h2>Sábado</h2>
+
+                    <div class="live-list">
+
+                        <article class="live-item">
+                            <span>HORA POR PROGRAMAR</span>
+                            <h3>LIVE FUZE</h3>
+                            <p>Transmisión comercial</p>
+                        </article>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+            <p class="helper-text">
+                Programación habitual de referencia.
+                Los horarios pendientes y los LIVE opcionales
+                no se contabilizarán como confirmados.
+            </p>
+
+        </section>
+
+
+        <!-- =====================================
+             ETAPAS DE PRODUCCIÓN DEL LIVE
+        ====================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+                <h2>Proceso de transmisión</h2>
+                <p>Flujo de trabajo estandarizado</p>
+            </div>
+
+            <div class="production-flow">
+
+                <article class="production-step">
+                    <span>01</span>
+                    <h3>PLANIFICACIÓN</h3>
+                    <p>
+                        Tema, escaleta, participantes
+                        y coordinación previa.
+                    </p>
+                </article>
+
+                <article class="production-step">
+                    <span>02</span>
+                    <h3>ESCENARIO</h3>
+                    <p>
+                        Limpieza, mobiliario,
+                        decoración e iluminación.
+                    </p>
+                </article>
+
+                <article class="production-step">
+                    <span>03</span>
+                    <h3>CONFIGURACIÓN</h3>
+                    <p>
+                        Cámaras, Rodecaster, OBS,
+                        overlays y pruebas técnicas.
+                    </p>
+                </article>
+
+                <article class="production-step">
+                    <span>04</span>
+                    <h3>TRANSMISIÓN</h3>
+                    <p>
+                        Operación de cámaras,
+                        audio y monitoreo del LIVE.
+                    </p>
+                </article>
+
+                <article class="production-step">
+                    <span>05</span>
+                    <h3>CIERRE</h3>
+                    <p>
+                        Respaldo de grabación,
+                        registro y organización.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             NUEVA TRANSMISIÓN
+        ====================================== -->
+
+        <section class="dashboard-section"
+                 id="nueva-transmision">
+
+            <div class="section-header">
+                <h2>Nueva transmisión</h2>
+                <p>Crear una orden de LIVE</p>
+            </div>
+
+            <form id="form-live"
+                  class="production-form">
+
+                <div class="form-group">
+
+                    <label for="nombre-live">
+                        Nombre del LIVE
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nombre-live"
+                        placeholder="Ej. Mujeres Emprendedoras"
+                        maxlength="120"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="cliente-live">
+                        Cliente / Marca
+                    </label>
+
+                    <select id="cliente-live" required>
+
+                        <option value="">
+                            Seleccionar cliente
+                        </option>
+
+                        <option value="abregu">
+                            ABREGU
+                        </option>
+
+                        <option value="fuze">
+                            FUZE
+                        </option>
+
+                        <option value="juan-infante">
+                            JUAN INFANTE
+                        </option>
+
+                        <option value="intepa">
+                            INTEPA
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="fecha-live">
+                        Fecha de transmisión
+                    </label>
+
+                    <input
+                        type="date"
+                        id="fecha-live"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="hora-live">
+                        Hora de inicio
+                    </label>
+
+                    <input type="time" id="hora-live">
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="duracion-live">
+                        Duración estimada (minutos)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="duracion-live"
+                        min="1"
+                        placeholder="Ej. 60"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="estado-live">
+                        Estado
+                    </label>
+
+                    <select id="estado-live">
+
+                        <option value="pendiente">
+                            Por confirmar
+                        </option>
+
+                        <option value="programado">
+                            Programado
+                        </option>
+
+                        <option value="preparacion">
+                            En preparación
+                        </option>
+
+                        <option value="listo">
+                            Listo para transmitir
+                        </option>
+
+                        <option value="finalizado">
+                            Finalizado
+                        </option>
+
+                        <option value="cancelado">
+                            Cancelado
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="tema-live">
+                        Tema de la transmisión
+                    </label>
+
+                    <textarea
+                        id="tema-live"
+                        rows="3"
+                        placeholder="Tema central del programa..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="escaleta-live">
+                        Escaleta / Contenido
+                    </label>
+
+                    <textarea
+                        id="escaleta-live"
+                        rows="6"
+                        placeholder="Introducción, temas, segmentos, cierre..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="participantes-live">
+                        Participantes e invitados
+                    </label>
+
+                    <textarea
+                        id="participantes-live"
+                        rows="3"
+                        placeholder="Conductores, invitados..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="recursos-live">
+                        Recursos y materiales
+                    </label>
+
+                    <textarea
+                        id="recursos-live"
+                        rows="4"
+                        placeholder="Overlays, videos, productos, música autorizada..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-actions">
+
+                    <button
+                        type="submit"
+                        id="guardar-live"
+                        disabled
+                    >
+                        Guardar transmisión
+                    </button>
+
+                    <button type="reset">
+                        Limpiar formulario
+                    </button>
+
+                </div>
+
+                <p class="helper-text">
+                    Activaremos el guardado cuando
+                    creemos lives.js.
+                </p>
+
+            </form>
+
+        </section>
+
+
+        <!-- =====================================
+             CHECKLIST DE PRODUCCIÓN
+        ====================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+                <h2>Checklist técnico</h2>
+                <p>Verificaciones antes de transmitir</p>
+            </div>
+
+            <div class="dashboard-columns">
+
+                <section class="dashboard-section">
+
+                    <h2>Estudio y escenario</h2>
+
+                    <ul class="task-list">
+                        <li>Limpiar el estudio</li>
+                        <li>Ordenar mobiliario y escenario</li>
+                        <li>Preparar decoración del cliente</li>
+                        <li>Modificar iluminación</li>
+                        <li>Verificar encuadres</li>
+                    </ul>
+
+                </section>
+
+
+                <section class="dashboard-section">
+
+                    <h2>Equipos técnicos</h2>
+
+                    <ul class="task-list">
+                        <li>Verificar cámaras y baterías</li>
+                        <li>Revisar conexiones HDMI</li>
+                        <li>Configurar micrófonos</li>
+                        <li>Comprobar Rodecaster Pro II</li>
+                        <li>Revisar audio sin eco</li>
+                    </ul>
+
+                </section>
+
+
+                <section class="dashboard-section">
+
+                    <h2>OBS y contenido</h2>
+
+                    <ul class="task-list">
+                        <li>Preparar escenas de OBS</li>
+                        <li>Verificar formato vertical</li>
+                        <li>Verificar formato horizontal</li>
+                        <li>Cargar overlays del cliente</li>
+                        <li>Realizar pruebas de transmisión</li>
+                    </ul>
+
+                </section>
+
+
+                <section class="dashboard-section">
+
+                    <h2>Coordinación y cierre</h2>
+
+                    <ul class="task-list">
+                        <li>Confirmar tema y escaleta</li>
+                        <li>Confirmar participantes</li>
+                        <li>Revisar contenido publicitario</li>
+                        <li>Guardar respaldo del LIVE</li>
+                        <li>Registrar incidencias y clips</li>
+                    </ul>
+
+                </section>
+
+            </div>
+
+            <p class="helper-text">
+                Este es el checklist estándar.
+                Más adelante cada transmisión
+                tendrá sus propias verificaciones guardadas.
+            </p>
+
+        </section>
+
+
+        <!-- =====================================
+             HISTORIAL DE TRANSMISIONES
+        ====================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+                <h2>Mis transmisiones</h2>
+                <p>Historial y programación</p>
+            </div>
+
+            <div id="lista-lives"
+                 class="productions-list">
+
+                <div class="empty-state">
+
+                    <h3>No hay transmisiones registradas</h3>
+
+                    <p>
+                        Cuando actives el módulo,
+                        podrás registrar y administrar
+                        tus LIVE desde aquí.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             PIE DE PÁGINA
+        ====================================== -->
+
+        <footer class="main-footer">
+
+            <p>ABREGU STUDIOS</p>
+
+            <span>
+                Centro de transmisiones en vivo
+            </span>
+
+            <small>
+                Administrador principal: SAMGIUK INGA
+            </small>
+
+        </footer>
+
+    </main>
+
+</div>
+
+<!-- JAVASCRIPT DE LIVE CONTROL -->
+<script src="../assets/js/lives.js" defer></script>
+
+</body>
+</html>

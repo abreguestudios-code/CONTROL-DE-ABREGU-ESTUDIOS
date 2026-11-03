@@ -1,0 +1,923 @@
+/* ===========================================================
+   ABREGU STUDIOS — STUDIO CONTROL
+   CSS 1.1 | Identidad cinematografica: negro, blanco y rojo
+   Para index.html (sin cambiar el HTML)
+   =========================================================== */
+
+:root {
+    color-scheme: dark;
+    --bg-primary: #09090b;
+    --bg-sidebar: #0e0d10;
+    --bg-card: #161518;
+    --bg-card-hover: #211c20;
+    --border-color: #343035;
+
+    --text-primary: #f7f5f4;
+    --text-secondary: #c6bec1;
+    --text-muted: #90868c;
+
+    --accent: #e51c38;
+    --accent-light: #ff5a6e;
+    --accent-soft: rgba(229, 28, 56, 0.13);
+    --success: #9de2c8;
+    --warning: #ffc077;
+
+    --radius: 14px;
+    --radius-small: 9px;
+    --sidebar-width: 278px;
+    --shadow-card: 0 14px 32px rgba(0, 0, 0, 0.23);
+}
+
+/* 1. BASE */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+    min-height: 100vh;
+    font-family: "Segoe UI", Inter, Arial, sans-serif;
+    line-height: 1.55;
+    color: var(--text-primary);
+    background:
+        radial-gradient(circle at 84% 0%, rgba(229, 28, 56, 0.115), transparent 28%),
+        radial-gradient(circle at 8% 88%, rgba(120, 12, 33, 0.07), transparent 29%),
+        var(--bg-primary);
+}
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: .11;
+    background-image: linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px);
+    background-size: 52px 52px;
+    mask-image: linear-gradient(to bottom, black, transparent 78%);
+}
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; }
+.app-container { display: flex; min-height: 100vh; position: relative; z-index: 1; }
+
+/* 2. SIDEBAR */
+.sidebar {
+    width: var(--sidebar-width);
+    min-width: var(--sidebar-width);
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    background: rgba(14, 13, 16, .97);
+    border-right: 1px solid var(--border-color);
+    scrollbar-width: thin;
+    scrollbar-color: #4a353b transparent;
+}
+.sidebar-logo {
+    padding: 23px 18px 21px;
+    border-bottom: 1px solid var(--border-color);
+    position: relative;
+}
+.sidebar-logo::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 18px;
+    width: 64px;
+    height: 2px;
+    background: var(--accent);
+}
+.logo-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 105px;
+    object-fit: contain;
+    padding: 10px;
+    background: #f7f5f4;
+    border-radius: 10px;
+}
+.sidebar-logo p {
+    margin-top: 11px;
+    font-size: 10px;
+    letter-spacing: 1.15px;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--text-muted);
+}
+.sidebar-nav { flex: 1; padding: 15px 12px 24px; }
+.nav-title {
+    margin: 23px 12px 9px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.6px;
+    color: var(--text-muted);
+}
+.nav-item {
+    display: block;
+    margin-bottom: 4px;
+    padding: 11px 14px;
+    border-radius: var(--radius-small);
+    border: 1px solid transparent;
+    border-left: 3px solid transparent;
+    color: var(--text-secondary);
+    font-size: 12.5px;
+    font-weight: 550;
+    transition: background .2s, color .2s, border-color .2s, transform .2s;
+}
+.nav-item:hover {
+    background: var(--bg-card-hover);
+    color: #fff;
+    transform: translateX(2px);
+}
+.nav-item.active {
+    background: linear-gradient(90deg, rgba(229,28,56,.18), rgba(229,28,56,.035));
+    border-color: rgba(229, 28, 56, .24);
+    border-left-color: var(--accent);
+    color: #fff;
+    font-weight: 700;
+}
+.sidebar-profile {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin: 10px 12px 17px;
+    padding: 14px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    background: #1a161a;
+}
+.profile-avatar {
+    display: grid;
+    place-items: center;
+    flex: 0 0 43px;
+    width: 43px;
+    height: 43px;
+    border-radius: 11px;
+    border: 1px solid rgba(255, 90, 110, .3);
+    background: var(--accent-soft);
+    color: #ff8392;
+    font-size: 13px;
+    font-weight: 800;
+}
+.profile-info { min-width: 0; }
+.profile-info h3 { font-size: 11.5px; letter-spacing: .2px; }
+.profile-info p { margin-top: 3px; font-size: 10px; line-height: 1.4; color: var(--text-secondary); }
+.profile-info span { display: block; margin-top: 5px; font-size: 10px; font-weight: 650; color: var(--accent-light); }
+
+/* 3. PANEL */
+.main-content {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    max-width: 1640px;
+    margin: 0 auto;
+    padding: 37px 42px 30px;
+}
+.main-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 34px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--border-color);
+}
+.subtitle {
+    margin-bottom: 9px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--accent-light);
+}
+.header-title h1 {
+    font-size: clamp(27px, 3vw, 37px);
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -1.3px;
+}
+.header-title > p:last-child { margin-top: 9px; font-size: 13px; color: var(--text-secondary); }
+.header-date {
+    flex-shrink: 0;
+    min-width: 180px;
+    padding: 12px 17px;
+    border-radius: var(--radius-small);
+    border: 1px solid var(--border-color);
+    background: #171417;
+}
+.header-date span { display: block; color: var(--text-muted); font-size: 10px; letter-spacing: .3px; }
+.header-date strong { display: block; margin-top: 4px; font-size: 13px; }
+
+/* 4. TITULOS Y SECCIONES */
+.dashboard-section { margin-bottom: 31px; }
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 17px;
+}
+.section-header h2, .dashboard-section > h2 { font-size: 16px; font-weight: 750; letter-spacing: -.3px; }
+.section-header p { color: var(--text-muted); font-size: 12px; }
+.section-header a { color: var(--accent-light); font-size: 12px; font-weight: 650; }
+.section-header a:hover { text-decoration: underline; }
+
+/* 5. INDICADORES */
+.stats-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.stat-card {
+    position: relative;
+    overflow: hidden;
+    padding: 24px 22px 20px;
+    background: linear-gradient(145deg, rgba(229,28,56,.08), transparent 54%), var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
+    transition: transform .2s, border-color .2s;
+}
+.stat-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 22px;
+    right: 22px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), transparent 65%);
+}
+.stat-card:hover { transform: translateY(-3px); border-color: #99424f; }
+.stat-card h3 { font-size: 12px; font-weight: 550; color: var(--text-secondary); }
+.stat-number { margin: 13px 0 8px; font-size: clamp(32px, 3vw, 42px); line-height: 1.1; font-weight: 800; letter-spacing: -1.7px; }
+.stat-card:first-child .stat-number { color: var(--accent-light); }
+.stat-card:last-child .stat-number { color: #fff; }
+.stat-card span { color: var(--text-muted); font-size: 11px; }
+
+/* 6. METAS POR MARCA */
+.brands-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.brand-card {
+    position: relative;
+    padding: 22px;
+    border-radius: var(--radius);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    transition: border-color .2s, transform .2s;
+}
+.brand-card:hover { border-color: #99424f; transform: translateY(-2px); }
+.brand-card h3 { font-size: 12px; font-weight: 800; letter-spacing: .9px; }
+.brand-counter { margin: 19px 0 12px; font-size: 14px; font-weight: 650; color: var(--text-secondary); }
+.brand-counter span { color: #fff; font-size: 26px; font-weight: 800; }
+.brand-card progress {
+    display: block;
+    width: 100%;
+    height: 9px;
+    overflow: hidden;
+    border: 0;
+    border-radius: 20px;
+    background: #35292e;
+    accent-color: var(--accent);
+}
+.brand-card progress::-webkit-progress-bar { background: #35292e; border-radius: 20px; }
+.brand-card progress::-webkit-progress-value { background: linear-gradient(90deg, #a51029, #ff4a65); border-radius: 20px; }
+.brand-card progress::-moz-progress-bar { background: var(--accent); border-radius: 20px; }
+.brand-card > p:last-child { margin-top: 13px; color: var(--text-muted); font-size: 11px; }
+
+/* 7. TAREAS Y TRANSMISIONES */
+.dashboard-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.dashboard-columns .dashboard-section {
+    min-width: 0;
+    padding: 23px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+}
+#dia-actual { margin-bottom: 14px; font-size: 12px; color: var(--text-muted); }
+.task-list { list-style: none; }
+.task-list li {
+    position: relative;
+    margin-bottom: 9px;
+    padding: 12px 12px 12px 38px;
+    background: rgba(255,255,255,.025);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-small);
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+.task-list li::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 14px;
+    width: 12px;
+    height: 12px;
+    border: 1.5px solid var(--accent-light);
+    border-radius: 3px;
+    transform: translateY(-50%);
+}
+.live-list { display: flex; flex-direction: column; gap: 10px; }
+.live-item {
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-left: 3px solid var(--accent);
+    border-radius: var(--radius-small);
+    background: rgba(255,255,255,.025);
+}
+.live-item span { color: var(--accent-light); font-size: 10px; font-weight: 800; letter-spacing: .6px; }
+.live-item h3 { margin-top: 4px; font-size: 13px; }
+.live-item p { margin-top: 2px; color: var(--text-secondary); font-size: 11px; }
+
+/* 8. ACCIONES RAPIDAS */
+.quick-actions { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 13px; }
+.action-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 72px;
+    padding: 15px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    text-align: center;
+    font-size: 12px;
+    font-weight: 650;
+    transition: background .2s, border-color .2s, transform .2s;
+}
+.action-card:hover {
+    border-color: var(--accent);
+    background: linear-gradient(135deg, rgba(229,28,56,.16), var(--bg-card-hover));
+    transform: translateY(-2px);
+}
+
+/* 9. PIE DE PAGINA */
+.main-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding-top: 21px;
+    margin-top: 26px;
+    border-top: 1px solid var(--border-color);
+}
+.main-footer p { font-size: 11px; font-weight: 800; letter-spacing: 1px; }
+.main-footer span, .main-footer small { color: var(--text-muted); font-size: 10px; }
+
+/* 10. ACCESIBILIDAD */
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 3px; }
+
+/* 11. RESPONSIVE */
+@media (max-width: 1200px) {
+    .main-content { padding: 28px; }
+    .stats-grid, .brands-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .quick-actions { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 900px) {
+    .app-container { display: block; }
+    .sidebar { position: relative; width: 100%; min-width: 0; height: auto; overflow: visible; }
+    .sidebar-logo { display: flex; align-items: center; gap: 16px; }
+    .sidebar-logo::after { display: none; }
+    .logo-img { width: 220px; max-height: 80px; }
+    .sidebar-logo p { margin-top: 0; text-align: left; }
+    .sidebar-nav { display: flex; align-items: center; gap: 5px; padding: 12px; overflow-x: auto; }
+    .nav-title { display: none; }
+    .nav-item { margin-bottom: 0; white-space: nowrap; }
+    .nav-item:hover { transform: none; }
+    .sidebar-profile { display: none; }
+    .main-content { padding: 24px; }
+}
+@media (max-width: 650px) {
+    .main-content { padding: 20px 15px; }
+    .main-header { flex-direction: column; gap: 17px; }
+    .header-date { width: 100%; }
+    .sidebar-logo { flex-direction: column; align-items: flex-start; }
+    .stats-grid, .brands-grid, .dashboard-columns { grid-template-columns: 1fr; }
+    .quick-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .section-header { flex-direction: column; align-items: flex-start; gap: 5px; }
+    .main-footer { flex-direction: column; align-items: flex-start; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
+
+
+/* ============================================
+   ABREGU STUDIOS
+   MODULO: PRODUCCION AUDIOVISUAL
+   Diseño Cinematic Red
+============================================ */
+
+
+/* ============================================
+   1. LINEA DE PRODUCCION
+============================================ */
+
+.production-flow {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+    margin-bottom: 35px;
+}
+
+.production-step {
+    position: relative;
+    min-width: 0;
+    min-height: 165px;
+    padding: 24px 20px;
+
+    background: linear-gradient(
+        145deg,
+        #1c191c 0%,
+        #111113 100%
+    );
+
+    border: 1px solid #383037;
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+/* Linea roja decorativa superior */
+
+.production-step::before {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 65px;
+    height: 3px;
+
+    background: #e51c38;
+    border-radius: 0 0 4px 0;
+}
+
+/* Numero de etapa */
+
+.production-step > span {
+    display: block;
+
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1.2;
+
+    color: #ff405c;
+    margin-bottom: 16px;
+}
+
+/* Nombre de etapa */
+
+.production-step h3 {
+    font-size: 14px;
+    font-weight: 800;
+
+    color: #ffffff;
+    letter-spacing: 1px;
+
+    margin-bottom: 7px;
+}
+
+/* Descripcion */
+
+.production-step p {
+    color: #969096;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* Efecto visual */
+
+.production-step:hover {
+    transform: translateY(-4px);
+
+    border-color: #e51c38;
+
+    background: linear-gradient(
+        145deg,
+        #291419,
+        #151315
+    );
+}
+
+
+/* ============================================
+   2. FORMULARIO DE PRODUCCION
+============================================ */
+
+.production-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 24px;
+
+    padding: 30px;
+
+    background: #151416;
+
+    border: 1px solid #383037;
+    border-radius: 16px;
+
+    margin-top: 20px;
+    margin-bottom: 35px;
+}
+
+/* Contenedores */
+
+.production-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+
+    min-width: 0;
+}
+
+/* Etiquetas */
+
+.production-form label {
+    font-size: 12px;
+    font-weight: 700;
+
+    color: #f4f1f2;
+    letter-spacing: 0.3px;
+}
+
+/* Campos */
+
+.production-form input,
+.production-form select,
+.production-form textarea {
+    width: 100%;
+    min-width: 0;
+
+    padding: 13px 15px;
+
+    background: #0b0b0d;
+    color: #f7f5f4;
+
+    border: 1px solid #3a3439;
+    border-radius: 9px;
+
+    font-family: inherit;
+    font-size: 13px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+/* Placeholder */
+
+.production-form input::placeholder,
+.production-form textarea::placeholder {
+    color: #777078;
+}
+
+/* Campo seleccionado */
+
+.production-form input:focus,
+.production-form select:focus,
+.production-form textarea:focus {
+    border-color: #e51c38;
+
+    box-shadow:
+        0 0 0 3px rgba(229, 28, 56, 0.12);
+}
+
+/* Select */
+
+.production-form select {
+    cursor: pointer;
+}
+
+.production-form option {
+    background: #151416;
+    color: #ffffff;
+}
+
+/* Textarea */
+
+.production-form textarea {
+    resize: vertical;
+    min-height: 100px;
+    line-height: 1.6;
+}
+
+/* Objetivo y guion ocupan todo el ancho */
+
+.production-form .form-group:nth-child(5),
+.production-form .form-group:nth-child(6) {
+    grid-column: 1 / -1;
+}
+
+/* Inputs de fecha */
+
+.production-form input[type="date"] {
+    color-scheme: dark;
+}
+
+
+/* ============================================
+   3. BOTONES DEL FORMULARIO
+============================================ */
+
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    grid-column: 1 / -1;
+
+    padding-top: 14px;
+    border-top: 1px solid #302b30;
+}
+
+.form-actions button {
+    min-height: 44px;
+
+    padding: 12px 22px;
+
+    border: none;
+    border-radius: 9px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s,
+        transform 0.2s;
+}
+
+/* Guardar */
+
+#guardar-produccion {
+    background: #e51c38;
+    color: #ffffff;
+}
+
+#guardar-produccion:hover:not(:disabled) {
+    background: #ff304d;
+    transform: translateY(-2px);
+}
+
+/* Boton desactivado */
+
+.form-actions button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Limpiar */
+
+.form-actions button[type="reset"] {
+    background: #292529;
+    color: #f7f5f4;
+
+    border: 1px solid #433b42;
+}
+
+.form-actions button[type="reset"]:hover {
+    background: #383138;
+}
+
+/* Texto de ayuda */
+
+.production-form .helper-text {
+    grid-column: 1 / -1;
+
+    color: #928b92;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+
+/* ============================================
+   4. FILTROS DE PRODUCCION
+============================================ */
+
+.production-filters {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 14px;
+
+    margin: 20px 0;
+    padding: 18px 20px;
+
+    background: #151416;
+
+    border: 1px solid #383037;
+    border-radius: 12px;
+}
+
+.production-filters label {
+    color: #bcb5bc;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.production-filters select {
+    min-width: 190px;
+    max-width: 100%;
+
+    padding: 11px 15px;
+
+    background: #0b0b0d;
+    color: #f5f3f4;
+
+    border: 1px solid #423941;
+    border-radius: 8px;
+
+    font: inherit;
+    font-size: 12px;
+}
+
+
+/* ============================================
+   5. LISTADO DE PRODUCCIONES
+============================================ */
+
+.productions-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+    margin-top: 20px;
+}
+
+/* Cuando aun no existen proyectos */
+
+.empty-state {
+    grid-column: 1 / -1;
+
+    padding: 55px 25px;
+
+    text-align: center;
+
+    background: #151416;
+
+    border: 1px dashed #48323a;
+    border-radius: 14px;
+}
+
+.empty-state h3 {
+    color: #ffffff;
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.empty-state p {
+    color: #969096;
+    font-size: 13px;
+}
+
+
+/* ============================================
+   6. TARJETAS DE FUTUROS PROYECTOS
+============================================ */
+
+.production-card {
+    min-width: 0;
+    padding: 22px;
+
+    background: #171518;
+
+    border: 1px solid #383037;
+    border-radius: 14px;
+
+    transition: border-color 0.2s;
+}
+
+.production-card:hover {
+    border-color: #e51c38;
+}
+
+.production-card h3 {
+    font-size: 15px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.production-card p {
+    color: #a9a2a8;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+
+/* ============================================
+   7. RESPONSIVE
+============================================ */
+
+@media (min-width: 1500px) {
+
+    .production-flow {
+        grid-template-columns:
+            repeat(6, minmax(0, 1fr));
+    }
+
+}
+
+@media (max-width: 900px) {
+
+    .production-flow {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .production-form {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .production-form .form-group {
+        grid-column: 1 / -1;
+    }
+
+    .productions-list {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions button {
+        width: 100%;
+    }
+
+    .production-filters {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .production-filters select {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 420px) {
+
+    .production-flow {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* LOGO OFICIAL ABREGU STUDIOS */
+
+.sidebar-logo .logo-img {
+    display: block;
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+
+/* =====================================
+   ABREGU STUDIOS - LOGO SIN FONDO
+===================================== */
+
+.sidebar-logo {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 15px 10px !important;
+}
+
+.sidebar-logo .logo-img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 250px !important;
+    height: auto !important;
+    object-fit: contain !important;
+
+    background: transparent !important;
+    background-color: transparent !important;
+
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+
+    padding: 0 !important;
+    margin: 0 auto !important;
+}

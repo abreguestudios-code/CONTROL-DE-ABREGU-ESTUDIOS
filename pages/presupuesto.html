@@ -1,0 +1,592 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Presupuesto y Rentabilidad | Abregu Studios</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <style>
+    .fin-page{--fin-border:#3a3a3e;--fin-soft:#19191e;--fin-red:#e32643}
+    .fin-page *{box-sizing:border-box}
+    .fin-page .fin-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+    .fin-page .fin-panel{background:var(--fin-soft);border:1px solid var(--fin-border);border-radius:14px;padding:19px;margin-bottom:16px}
+    .fin-page .fin-panel h3{margin:0 0 14px}
+    .fin-page .fin-kpi{border:1px solid var(--fin-border);background:var(--fin-soft);padding:15px;border-radius:12px}
+    .fin-page .fin-kpi small{opacity:.8;display:block}
+    .fin-page .fin-kpi strong{display:block;font-size:1.55rem;margin:8px 0}
+    .fin-page .fin-fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px;margin:12px 0}
+    .fin-page label{display:flex;flex-direction:column;gap:6px;font-size:.9rem}
+    .fin-page input,.fin-page select,.fin-page textarea{width:100%;border-radius:8px;border:1px solid #555;padding:11px;background:#111116;color:#fff;font:inherit;min-width:0}
+    .fin-page textarea{min-height:64px;resize:vertical}
+    .fin-page input[type=checkbox]{width:auto;accent-color:var(--fin-red)}
+    .fin-page .fin-check{display:flex;flex-direction:row;align-items:center;gap:8px;margin:12px 0}
+    .fin-page button{border:0;border-radius:9px;padding:10px 14px;background:var(--fin-red);color:white;font:inherit;font-weight:650;cursor:pointer}
+    .fin-page button.alt{background:#303038}
+    .fin-page button.warn{background:#833041}
+    .fin-page button:disabled{opacity:.5;cursor:not-allowed}
+    .fin-page .fin-actions{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin-top:14px}
+    .fin-page .fin-item{border:1px solid var(--fin-border);padding:14px;border-radius:11px;margin-top:10px;background:#121216;overflow-wrap:anywhere}
+    .fin-page .fin-item strong{font-size:1.02rem}
+    .fin-page .fin-item p{margin:6px 0;font-size:.91rem}
+    .fin-page .fin-muted{opacity:.77;font-size:.91rem}
+    .fin-page .fin-accent{color:#ff7a8d}
+    .fin-page .fin-table{overflow-x:auto}
+    .fin-page table{width:100%;border-collapse:collapse;min-width:650px}
+    .fin-page th,.fin-page td{padding:11px 9px;border-bottom:1px solid var(--fin-border);text-align:left;vertical-align:top}
+    .fin-page th{font-size:.83rem;opacity:.86}
+    .fin-page .fin-caption{font-size:.85rem;opacity:.76;margin-top:9px}
+    .fin-page .fin-subtitle{margin:10px 0 18px;opacity:.85}
+    .fin-page .fin-section-title{margin-top:28px}
+    .fin-page .fin-status{font-size:.79rem;display:inline-block;border:1px solid #6b5c65;border-radius:99px;padding:3px 9px}
+    .fin-page .fin-radio{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+    .fin-page #fin-alerta{margin:14px 0;min-height:1em}
+    @media(max-width:650px){
+      .fin-page .fin-panel{padding:12px}
+      .fin-page .fin-fields{grid-template-columns:1fr}
+      .fin-page .fin-kpi strong{font-size:1.35rem}
+    }
+    @media print{
+      .sidebar,.fin-page button,.fin-page form,.fin-page .fin-actions{display:none!important}
+    }
+  </style>
+  <script src="../assets/js/presupuesto.js" defer></script>
+</head>
+
+<body>
+<div class="app-container">
+
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <img src="../assets/img/logo-audiovisual.png" alt="Abregu Studios" class="logo-img">
+      <p>Sistema de gestión audiovisual</p>
+    </div>
+
+    <nav class="sidebar-nav" aria-label="Menú principal">
+      <p class="nav-title">PRINCIPAL</p>
+      <a href="../index.html" class="nav-item">Resumen</a>
+      <a href="produccion.html" class="nav-item">Producción audiovisual</a>
+      <a href="lives.html" class="nav-item">LIVE Control</a>
+      <a href="tareas.html" class="nav-item">Mis tareas</a>
+      <a href="agenda.html" class="nav-item">Agenda semanal</a>
+
+      <p class="nav-title">ADMINISTRACIÓN</p>
+      <a href="clientes.html" class="nav-item">Clientes y ventas</a>
+      <a href="inventario.html" class="nav-item">Inventario</a>
+      <a href="asistencia.html" class="nav-item">Control de asistencia</a>
+      <a href="informes.html" class="nav-item">Informes y puntos</a>
+      <a href="presupuesto.html" class="nav-item active" aria-current="page">Presupuesto y rentabilidad</a>
+
+      <p class="nav-title">SISTEMA</p>
+      <a href="equipo.html" class="nav-item">Equipo y permisos</a>
+      <a href="configuracion.html" class="nav-item">Configuración</a>
+    </nav>
+
+    <div class="sidebar-profile">
+      <div class="profile-avatar">SI</div>
+      <div class="profile-info">
+        <h3>SAMGIUK INGA</h3>
+        <p>Productor audiovisual principal</p>
+        <span>Administrador principal</span>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main-content fin-page">
+
+    <header class="main-header">
+      <div class="header-title">
+        <p class="subtitle">GESTIÓN FINANCIERA</p>
+        <h1>Presupuesto y Rentabilidad</h1>
+        <p>Tarifario, cotizaciones, ingresos y gastos reales del estudio audiovisual.</p>
+      </div>
+
+      <div class="header-date">
+        <span>Responsable</span>
+        <strong>SAMGIUK INGA</strong>
+      </div>
+    </header>
+
+    <p class="fin-subtitle">
+      Los precios iniciales son propuestas editables, no precios oficiales.
+      Las cotizaciones <strong>no cuentan como ingresos</strong> hasta registrar un cobro.
+    </p>
+
+    <p id="fin-alerta" role="status" aria-live="polite"></p>
+
+    <!-- ==============================
+         RESUMEN FINANCIERO
+    =============================== -->
+
+    <section class="dashboard-section" aria-labelledby="fin-resumen-titulo">
+      <div class="section-header">
+        <h2 id="fin-resumen-titulo">Resultado del mes</h2>
+        <p>Se calcula únicamente con movimientos reales registrados.</p>
+      </div>
+
+      <div class="fin-fields">
+        <label>
+          Mes a consultar
+          <input id="fin-mes" type="month">
+        </label>
+      </div>
+
+      <div class="fin-grid">
+        <div class="fin-kpi">
+          <small>Ingresos cobrados</small>
+          <strong id="fin-ingresos">S/ 0.00</strong>
+        </div>
+
+        <div class="fin-kpi">
+          <small>Gastos registrados</small>
+          <strong id="fin-gastos">S/ 0.00</strong>
+        </div>
+
+        <div class="fin-kpi">
+          <small>Resultado registrado</small>
+          <strong id="fin-resultado">S/ 0.00</strong>
+        </div>
+
+        <div class="fin-kpi">
+          <small>Cotizaciones en seguimiento</small>
+          <strong id="fin-cotizaciones">0</strong>
+        </div>
+      </div>
+
+      <p class="fin-caption">
+        El resultado es ingreso menos gasto anotado; no equivale necesariamente
+        a utilidad contable o neta. Registra sueldos, depreciación, alquiler,
+        internet, mantenimiento e impuestos cuando corresponda.
+      </p>
+    </section>
+
+    <!-- ==============================
+         TARIFARIO
+    =============================== -->
+
+    <section class="dashboard-section" aria-labelledby="fin-tarifa-titulo">
+      <div class="section-header">
+        <h2 id="fin-tarifa-titulo">1. Tarifario de servicios</h2>
+        <p>Edita las tarifas de referencia antes de cotizar.</p>
+      </div>
+
+      <div class="fin-panel">
+        <form id="fin-form-tarifa">
+
+          <div class="fin-fields">
+            <label>
+              Servicio
+              <input
+                id="fin-tarifa-nombre"
+                maxlength="100"
+                required
+                placeholder="Ej. Edición de 5 reels">
+            </label>
+
+            <label>
+              Unidad
+              <select id="fin-tarifa-unidad">
+                <option value="hora">Hora</option>
+                <option value="sesión">Sesión</option>
+                <option value="pieza">Pieza</option>
+                <option value="paquete">Paquete</option>
+                <option value="jornada">Jornada</option>
+              </select>
+            </label>
+
+            <label>
+              Precio base sin IGV (S/)
+              <input
+                id="fin-tarifa-precio"
+                type="number"
+                step="0.01"
+                min="0"
+                required>
+            </label>
+          </div>
+
+          <div class="fin-actions">
+            <button type="submit" id="fin-tarifa-guardar">
+              Agregar tarifa
+            </button>
+
+            <button
+              type="button"
+              class="alt"
+              id="fin-tarifa-cancelar"
+              hidden>
+              Cancelar edición
+            </button>
+          </div>
+
+        </form>
+      </div>
+
+      <div id="fin-lista-tarifas" class="fin-table"></div>
+    </section>
+
+    <!-- ==============================
+         COTIZADOR
+    =============================== -->
+
+    <section class="dashboard-section" aria-labelledby="fin-cotizador-titulo">
+      <div class="section-header">
+        <h2 id="fin-cotizador-titulo">2. Cotizador de clientes</h2>
+        <p>Calcula el precio según costos y margen.</p>
+      </div>
+
+      <div class="fin-panel">
+        <form id="fin-form-cotizacion">
+
+          <div class="fin-fields">
+
+            <label>
+              Fecha
+              <input id="fin-cot-fecha" type="date" required>
+            </label>
+
+            <label>
+              Cliente
+              <input
+                id="fin-cot-cliente"
+                maxlength="100"
+                required
+                placeholder="Ej. INTEPA">
+            </label>
+
+            <label>
+              Servicio
+              <select id="fin-cot-servicio" required></select>
+            </label>
+
+            <label>
+              Unidades / sesiones
+              <input
+                id="fin-cot-unidades"
+                type="number"
+                min="1"
+                max="1000"
+                step="1"
+                value="1"
+                required>
+            </label>
+
+            <label>
+              Horas de preparación (total)
+              <input
+                id="fin-cot-prep"
+                type="number"
+                min="0"
+                max="500"
+                step="0.25"
+                value="1"
+                required>
+            </label>
+
+            <label>
+              Horas de grabación / LIVE (total)
+              <input
+                id="fin-cot-rodaje"
+                type="number"
+                min="0"
+                max="500"
+                step="0.25"
+                value="2"
+                required>
+            </label>
+
+            <label>
+              Horas de edición (total)
+              <input
+                id="fin-cot-edicion"
+                type="number"
+                min="0"
+                max="500"
+                step="0.25"
+                value="0"
+                required>
+            </label>
+
+            <label>
+              Costo interno de personal (S//h)
+              <input
+                id="fin-cot-hora"
+                type="number"
+                min="0"
+                max="10000"
+                step="0.01"
+                value="30"
+                required>
+            </label>
+
+            <label>
+              Equipos / desgaste (S/)
+              <input
+                id="fin-cot-equipos"
+                type="number"
+                min="0"
+                step="0.01"
+                value="45"
+                required>
+            </label>
+
+            <label>
+              Gastos operativos asignados (S/)
+              <input
+                id="fin-cot-fijos"
+                type="number"
+                min="0"
+                step="0.01"
+                value="40"
+                required>
+            </label>
+
+            <label>
+              Otros costos (S/)
+              <input
+                id="fin-cot-otros"
+                type="number"
+                min="0"
+                step="0.01"
+                value="35"
+                required>
+            </label>
+
+            <label>
+              Margen objetivo (%)
+              <input
+                id="fin-cot-margen"
+                type="number"
+                min="0"
+                max="90"
+                step="1"
+                value="40"
+                required>
+            </label>
+
+            <label>
+              Precio de venta sin IGV (S/)
+              <input
+                id="fin-cot-precio"
+                type="number"
+                min="0"
+                step="0.01"
+                placeholder="Autocompletar sugerido">
+            </label>
+
+          </div>
+
+          <label class="fin-check">
+            <input id="fin-cot-igv" type="checkbox">
+            Calcular IGV del 18% sobre el precio de venta (si corresponde)
+          </label>
+
+          <label>
+            Alcance, revisiones y entregables
+            <textarea
+              id="fin-cot-notas"
+              placeholder="Qué incluye, qué no incluye, plazo, revisiones..."
+              maxlength="1500"></textarea>
+          </label>
+
+          <div class="fin-grid" style="margin-top:14px">
+
+            <div class="fin-kpi">
+              <small>Costo interno estimado</small>
+              <strong id="fin-cot-costo">S/ 0.00</strong>
+            </div>
+
+            <div class="fin-kpi">
+              <small>Precio sugerido sin IGV</small>
+              <strong id="fin-cot-sugerido">S/ 0.00</strong>
+            </div>
+
+            <div class="fin-kpi">
+              <small>Precio final al cliente</small>
+              <strong id="fin-cot-final">S/ 0.00</strong>
+            </div>
+
+            <div class="fin-kpi">
+              <small>Margen sobre venta sin IGV</small>
+              <strong id="fin-cot-margen-real">0%</strong>
+            </div>
+
+          </div>
+
+          <p class="fin-caption">
+            El sugerido es el mayor entre tarifa base × unidades y
+            costo ÷ (1 − margen objetivo). Puedes cambiar el precio
+            de venta manualmente. Los costos son ilustrativos hasta
+            que registres los reales.
+          </p>
+
+          <div class="fin-actions">
+            <button
+              type="button"
+              class="alt"
+              id="fin-cot-usar-sugerido">
+              Usar precio sugerido
+            </button>
+
+            <button type="submit" id="fin-cot-guardar">
+              Guardar cotización
+            </button>
+
+            <button
+              type="button"
+              class="alt"
+              id="fin-cot-limpiar">
+              Limpiar
+            </button>
+          </div>
+
+        </form>
+      </div>
+
+      <h3 class="fin-section-title">Cotizaciones guardadas</h3>
+      <div id="fin-lista-cotizaciones"></div>
+    </section>
+
+    <!-- ==============================
+         INGRESOS Y GASTOS
+    =============================== -->
+
+    <section class="dashboard-section" aria-labelledby="fin-movs-titulo">
+      <div class="section-header">
+        <h2 id="fin-movs-titulo">3. Ingresos y gastos reales</h2>
+        <p>Registra cobros cuando el dinero se recibe y gastos cuando ocurren.</p>
+      </div>
+
+      <div class="fin-panel">
+        <form id="fin-form-movimiento">
+
+          <div class="fin-fields">
+
+            <label>
+              Fecha
+              <input id="fin-mov-fecha" type="date" required>
+            </label>
+
+            <label>
+              Tipo
+              <select id="fin-mov-tipo">
+                <option value="ingreso">Ingreso cobrado</option>
+                <option value="gasto">Gasto</option>
+              </select>
+            </label>
+
+            <label>
+              Concepto
+              <input
+                id="fin-mov-concepto"
+                maxlength="120"
+                required
+                placeholder="Ej. LIVE INTEPA viernes">
+            </label>
+
+            <label>
+              Cliente / proveedor
+              <input
+                id="fin-mov-tercero"
+                maxlength="100"
+                placeholder="Ej. INTEPA">
+            </label>
+
+            <label>
+              Categoría
+              <select id="fin-mov-categoria">
+                <option value="servicio">Servicio / venta</option>
+                <option value="personal">Personal</option>
+                <option value="equipos">Equipos</option>
+                <option value="mantenimiento">Mantenimiento</option>
+                <option value="local">Local e internet</option>
+                <option value="software">Software</option>
+                <option value="transporte">Transporte</option>
+                <option value="impuestos">Impuestos</option>
+                <option value="otros">Otros</option>
+              </select>
+            </label>
+
+            <label>
+              Monto (S/)
+              <input
+                id="fin-mov-monto"
+                type="number"
+                min="0.01"
+                step="0.01"
+                required>
+            </label>
+
+          </div>
+
+          <label>
+            Detalle / observación
+            <textarea
+              id="fin-mov-nota"
+              maxlength="600"
+              placeholder="Número de sesión, comprobante o concepto del gasto"></textarea>
+          </label>
+
+          <div class="fin-actions">
+            <button type="submit">
+              Registrar movimiento
+            </button>
+          </div>
+
+        </form>
+      </div>
+
+      <div id="fin-lista-movimientos" class="fin-table"></div>
+    </section>
+
+    <!-- ==============================
+         EXPORTAR Y RESPALDAR
+    =============================== -->
+
+    <section class="dashboard-section">
+      <div class="section-header">
+        <h2>4. Exportar y respaldar</h2>
+        <p>Genera CSV para Excel o un JSON para conservar los registros financieros.</p>
+      </div>
+
+      <div class="fin-actions">
+        <button
+          class="alt"
+          id="fin-exportar-movs"
+          type="button">
+          Movimientos CSV
+        </button>
+
+        <button
+          class="alt"
+          id="fin-exportar-cots"
+          type="button">
+          Cotizaciones CSV
+        </button>
+
+        <button
+          class="alt"
+          id="fin-respaldo"
+          type="button">
+          Respaldo financiero JSON
+        </button>
+      </div>
+
+      <p class="fin-caption">
+        Guardado en este navegador mediante localStorage.
+        Esta página no reemplaza la contabilidad oficial
+        ni sincroniza datos entre computadoras.
+      </p>
+    </section>
+
+    <footer class="main-footer">
+      <p>ABREGU STUDIOS</p>
+      <span>Finanzas del estudio • Versión local</span>
+      <small>Responsable: SAMGIUK INGA</small>
+    </footer>
+
+  </main>
+
+</div>
+</body>
+</html>

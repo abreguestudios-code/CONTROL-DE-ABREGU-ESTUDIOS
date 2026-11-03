@@ -1,0 +1,670 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Gestión de producción audiovisual de Abregu.">
+
+    <title>Producción | Abregu Studios</title>
+
+    <!-- CSS COMPARTIDO -->
+    <link rel="stylesheet"
+          href="../assets/css/styles.css">
+
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- =====================================
+         MENÚ LATERAL
+    ====================================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <img
+                src="../assets/img/logo-audiovisual.png"
+                alt="Abregu Studios"
+                class="logo-img"
+            >
+
+            <p>Sistema de gestión audiovisual</p>
+
+        </div>
+
+        <nav class="sidebar-nav"
+             aria-label="Menú principal">
+
+            <p class="nav-title">PRINCIPAL</p>
+
+            <a href="../index.html" class="nav-item">
+                Resumen
+            </a>
+
+            <a href="produccion.html"
+               class="nav-item active"
+               aria-current="page">
+                Producción audiovisual
+            </a>
+
+            <a href="lives.html" class="nav-item">
+                LIVE Control
+            </a>
+
+            <a href="tareas.html" class="nav-item">
+                Mis tareas
+            </a>
+
+            <a href="agenda.html" class="nav-item">
+                Agenda semanal
+            </a>
+
+            <p class="nav-title">ADMINISTRACIÓN</p>
+
+            <a href="clientes.html" class="nav-item">
+                Clientes y ventas
+            </a>
+
+            <a href="inventario.html" class="nav-item">
+                Inventario
+            </a>
+
+            <a href="asistencia.html" class="nav-item">
+                Control de asistencia
+            </a>
+
+            <a href="informes.html" class="nav-item">
+                Informes y puntos
+            </a>
+
+            <a href="presupuesto.html" class="nav-item">
+    Presupuesto y rentabilidad
+</a>
+
+            <p class="nav-title">SISTEMA</p>
+
+            <a href="equipo.html" class="nav-item">
+                Equipo y permisos
+            </a>
+
+            <a href="configuracion.html" class="nav-item">
+                Configuración
+            </a>
+
+        </nav>
+
+        <div class="sidebar-profile">
+
+            <div class="profile-avatar">SI</div>
+
+            <div class="profile-info">
+
+                <h3>SAMGIUK INGA</h3>
+
+                <p>Productor audiovisual principal</p>
+
+                <span>Administrador principal</span>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================
+         CONTENIDO PRINCIPAL
+    ====================================== -->
+
+    <main class="main-content">
+
+        <!-- ENCABEZADO -->
+
+        <header class="main-header">
+
+            <div class="header-title">
+
+                <p class="subtitle">
+                    CENTRO DE PRODUCCIÓN
+                </p>
+
+                <h1>Producción Audiovisual</h1>
+
+                <p>
+                    Organiza, graba, edita y controla
+                    todos tus proyectos.
+                </p>
+
+            </div>
+
+            <div class="header-date">
+                <span>Meta semanal</span>
+                <strong>16 videos</strong>
+            </div>
+
+        </header>
+
+
+        <!-- =====================================
+             INDICADORES
+        ====================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <h2>Estado de producción</h2>
+
+                <p>Seguimiento de proyectos</p>
+
+            </div>
+
+            <div class="stats-grid">
+
+                <article class="stat-card">
+
+                    <h3>Total de proyectos</h3>
+
+                    <p class="stat-number"
+                       id="total-proyectos">0</p>
+
+                    <span>Videos registrados</span>
+
+                </article>
+
+                <article class="stat-card">
+
+                    <h3>En producción</h3>
+
+                    <p class="stat-number"
+                       id="en-produccion">0</p>
+
+                    <span>Proyectos activos</span>
+
+                </article>
+
+                <article class="stat-card">
+
+                    <h3>En revisión</h3>
+
+                    <p class="stat-number"
+                       id="en-revision">0</p>
+
+                    <span>Pendientes de aprobación</span>
+
+                </article>
+
+                <article class="stat-card">
+
+                    <h3>Publicados</h3>
+
+                    <p class="stat-number"
+                       id="total-publicados">0</p>
+
+                    <span>Videos de esta semana</span>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             FLUJO DE PRODUCCIÓN
+        ====================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <h2>Línea de producción</h2>
+
+                <p>
+                    Proceso de desarrollo audiovisual
+                </p>
+
+            </div>
+
+            <div class="production-flow">
+
+                <div class="production-step">
+                    <span>01</span>
+                    <h3>IDEA</h3>
+                    <p>Concepto inicial</p>
+                </div>
+
+                <div class="production-step">
+                    <span>02</span>
+                    <h3>GUION</h3>
+                    <p>Planificación de escenas</p>
+                </div>
+
+                <div class="production-step">
+                    <span>03</span>
+                    <h3>GRABACIÓN</h3>
+                    <p>Captura audiovisual</p>
+                </div>
+
+                <div class="production-step">
+                    <span>04</span>
+                    <h3>EDICIÓN</h3>
+                    <p>Montaje y acabados</p>
+                </div>
+
+                <div class="production-step">
+                    <span>05</span>
+                    <h3>REVISIÓN</h3>
+                    <p>Control de calidad</p>
+                </div>
+
+                <div class="production-step">
+                    <span>06</span>
+                    <h3>PUBLICADO</h3>
+                    <p>Entrega final</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             NUEVA PRODUCCIÓN
+        ====================================== -->
+
+        <section class="dashboard-section"
+                 id="nueva-produccion">
+
+            <div class="section-header">
+
+                <h2>Nueva producción</h2>
+
+                <p>Registrar proyecto audiovisual</p>
+
+            </div>
+
+            <form id="form-produccion"
+                  class="production-form">
+
+                <!-- NOMBRE -->
+
+                <div class="form-group">
+
+                    <label for="nombre-video">
+                        Nombre del video
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nombre-video"
+                        name="nombre"
+                        placeholder="Ej. Proceso de vinil 3D"
+                        maxlength="120"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- MARCA -->
+
+                <div class="form-group">
+
+                    <label for="marca-video">
+                        Marca / Cliente
+                    </label>
+
+                    <select
+                        id="marca-video"
+                        name="marca"
+                        required
+                    >
+
+                        <option value="">
+                            Seleccionar marca
+                        </option>
+
+                        <option value="abregu">
+                            ABREGU PRINT
+                        </option>
+
+                        <option value="fuze">
+                            FUZE
+                        </option>
+
+                        <option value="kintex">
+                            KINTEX
+                        </option>
+
+                        <option value="caedla">
+                            CAEDLA
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- FORMATO -->
+
+                <div class="form-group">
+
+                    <label for="tipo-video">
+                        Formato audiovisual
+                    </label>
+
+                    <select id="tipo-video"
+                            name="tipo"
+                            required>
+
+                        <option value="">
+                            Seleccionar formato
+                        </option>
+
+                        <option value="proceso">
+                            Video de producción
+                        </option>
+
+                        <option value="sketch">
+                            Sketch comercial
+                        </option>
+
+                        <option value="anuncio">
+                            Anuncio publicitario
+                        </option>
+
+                        <option value="producto">
+                            Presentación de producto
+                        </option>
+
+                        <option value="tutorial">
+                            Tutorial
+                        </option>
+
+                        <option value="otro">
+                            Otro formato
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- LOCACIÓN -->
+
+                <div class="form-group">
+
+                    <label for="locacion-video">
+                        Lugar de grabación
+                    </label>
+
+                    <select id="locacion-video"
+                            name="locacion"
+                            required>
+
+                        <option value="">
+                            Seleccionar locación
+                        </option>
+
+                        <option value="estudio">
+                            Estudio audiovisual
+                        </option>
+
+                        <option value="taller-kintex">
+                            Taller KINTEX
+                        </option>
+
+                        <option value="tienda-kintex">
+                            Tienda KINTEX
+                        </option>
+
+                        <option value="tienda-caedla">
+                            Tienda CAEDLA
+                        </option>
+
+                        <option value="otra">
+                            Otra locación
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- OBJETIVO -->
+
+                <div class="form-group">
+
+                    <label for="objetivo-video">
+                        Objetivo del video
+                    </label>
+
+                    <textarea
+                        id="objetivo-video"
+                        name="objetivo"
+                        rows="3"
+                        placeholder="¿Qué queremos comunicar o vender?"
+                    ></textarea>
+
+                </div>
+
+
+                <!-- GUION -->
+
+                <div class="form-group">
+
+                    <label for="guion-video">
+                        Idea / Guion
+                    </label>
+
+                    <textarea
+                        id="guion-video"
+                        name="guion"
+                        rows="6"
+                        placeholder="Escribe aquí la idea, las escenas o el guion..."
+                    ></textarea>
+
+                </div>
+
+
+                <!-- FECHAS -->
+
+                <div class="form-group">
+
+                    <label for="fecha-grabacion">
+                        Fecha de grabación
+                    </label>
+
+                    <input
+                        type="date"
+                        id="fecha-grabacion"
+                        name="fechaGrabacion"
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="fecha-entrega">
+                        Fecha de entrega
+                    </label>
+
+                    <input
+                        type="date"
+                        id="fecha-entrega"
+                        name="fechaEntrega"
+                    >
+
+                </div>
+
+
+                <!-- ESTADO INICIAL -->
+
+                <div class="form-group">
+
+                    <label for="estado-video">
+                        Estado del proyecto
+                    </label>
+
+                    <select id="estado-video"
+                            name="estado">
+
+                        <option value="idea">
+                            Idea
+                        </option>
+
+                        <option value="guion">
+                            Guion
+                        </option>
+
+                        <option value="grabacion">
+                            Grabación
+                        </option>
+
+                        <option value="edicion">
+                            Edición
+                        </option>
+
+                        <option value="revision">
+                            Revisión
+                        </option>
+
+                        <option value="publicado">
+                            Publicado
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- BOTONES -->
+
+                <div class="form-actions">
+
+                    <button
+                        type="submit"
+                        id="guardar-produccion"
+                        disabled
+                    >
+                        Guardar producción
+                    </button>
+
+                    <button type="reset">
+                        Limpiar formulario
+                    </button>
+
+                </div>
+
+                <p class="helper-text">
+                    El guardado se activará cuando
+                    programemos este módulo con JavaScript.
+                </p>
+
+            </form>
+
+        </section>
+
+
+        <!-- =====================================
+             PROYECTOS REGISTRADOS
+        ====================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <h2>Mis producciones</h2>
+
+                <p>Todos los videos registrados</p>
+
+            </div>
+
+
+            <!-- FILTROS -->
+
+            <div class="production-filters">
+
+                <label for="filtro-marca">
+                    Filtrar por marca
+                </label>
+
+                <select id="filtro-marca"
+                        disabled>
+
+                    <option value="todas">
+                        Todas las marcas
+                    </option>
+
+                    <option value="abregu">
+                        Abregu Print
+                    </option>
+
+                    <option value="fuze">FUZE</option>
+
+                    <option value="kintex">KINTEX</option>
+
+                    <option value="caedla">CAEDLA</option>
+
+                </select>
+
+            </div>
+
+
+            <!-- LISTADO DINÁMICO -->
+
+            <div id="lista-producciones"
+                 class="productions-list">
+
+                <div class="empty-state">
+
+                    <h3>Aún no tienes producciones</h3>
+
+                    <p>
+                        Los proyectos que registres
+                        aparecerán aquí.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             PIE DE PÁGINA
+        ====================================== -->
+
+        <footer class="main-footer">
+
+            <p>ABREGU STUDIOS</p>
+
+            <span>
+                Sistema de producción audiovisual
+            </span>
+
+            <small>
+                Administrador: SAMGIUK INGA
+            </small>
+
+        </footer>
+
+    </main>
+
+</div>
+
+<!-- JAVASCRIPT DE PRODUCCIÓN -->
+<script src="../assets/js/produccion.js" defer></script>
+
+</body>
+</html>

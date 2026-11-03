@@ -1,0 +1,600 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Sistema de gestión de producción audiovisual de Abregu.">
+
+    <title>Inicio | Abregu Studios</title>
+
+    <!-- Archivo CSS que crearemos después -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- ==================================
+             MENÚ LATERAL
+        =================================== -->
+
+        <aside class="sidebar">
+
+            <!-- LOGOTIPO OFICIAL -->
+
+            <div class="sidebar-logo">
+
+                <img
+                    src="assets/img/logo-audiovisual.png"
+                    alt="Abregu Studios"
+                    class="logo-img"
+                >
+
+                <p>Sistema de gestión audiovisual</p>
+
+            </div>
+
+
+            <!-- NAVEGACIÓN PRINCIPAL -->
+
+            <nav class="sidebar-nav" aria-label="Menú principal">
+
+                <p class="nav-title">PRINCIPAL</p>
+
+                <a href="index.html"
+                   class="nav-item active"
+                   aria-current="page">
+                    Resumen
+                </a>
+
+                <a href="pages/produccion.html"
+                   class="nav-item">
+                    Producción audiovisual
+                </a>
+
+                <a href="pages/lives.html"
+                   class="nav-item">
+                    LIVE Control
+                </a>
+
+                <a href="pages/tareas.html"
+                   class="nav-item">
+                    Mis tareas
+                </a>
+
+                <a href="pages/agenda.html"
+                   class="nav-item">
+                    Agenda semanal
+                </a>
+
+
+                <p class="nav-title">ADMINISTRACIÓN</p>
+
+                <a href="pages/clientes.html"
+                   class="nav-item">
+                    Clientes y ventas
+                </a>
+
+                <a href="pages/inventario.html"
+                   class="nav-item">
+                    Inventario
+                </a>
+
+                <a href="pages/asistencia.html"
+                   class="nav-item">
+                    Control de asistencia
+                </a>
+
+                <a href="pages/informes.html"
+                   class="nav-item">
+                    Informes y puntos
+                </a>
+
+                <a href="pages/presupuesto.html" class="nav-item">
+    Presupuesto y rentabilidad
+</a>    
+
+
+                <p class="nav-title">SISTEMA</p>
+
+                <a href="pages/equipo.html"
+                   class="nav-item">
+                    Equipo y permisos
+                </a>
+
+                <a href="pages/configuracion.html"
+                   class="nav-item">
+                    Configuración
+                </a>
+
+            </nav>
+
+
+            <!-- PERFIL DEL ADMINISTRADOR -->
+
+            <div class="sidebar-profile">
+
+                <div class="profile-avatar">
+                    SI
+                </div>
+
+                <div class="profile-info">
+
+                    <h3>SAMGIUK INGA</h3>
+
+                    <p>Productor audiovisual principal</p>
+
+                    <span>Administrador principal</span>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ==================================
+             CONTENIDO PRINCIPAL
+        =================================== -->
+
+        <main class="main-content">
+
+
+            <!-- ENCABEZADO -->
+
+            <header class="main-header">
+
+                <div class="header-title">
+
+                    <p class="subtitle">
+                        CENTRO DE OPERACIONES
+                    </p>
+
+                    <h1>Resumen general</h1>
+
+                    <p>
+                        Bienvenido, SAMGIUK.
+                        Aquí podrás controlar tu producción audiovisual.
+                    </p>
+
+                </div>
+
+
+                <div class="header-date">
+
+                    <span>Fecha actual</span>
+
+                    <strong id="fecha-actual">
+                        --/--/----
+                    </strong>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- ==================================
+                 INDICADORES GENERALES
+            =================================== -->
+
+            <section class="dashboard-section"
+                     aria-labelledby="indicadores">
+
+                <div class="section-header">
+
+                    <h2 id="indicadores">
+                        Indicadores generales
+                    </h2>
+
+                    <p>Seguimiento de la semana actual</p>
+
+                </div>
+
+
+                <div class="stats-grid">
+
+
+                    <!-- META SEMANAL -->
+
+                    <article class="stat-card">
+
+                        <h3>Meta semanal</h3>
+
+                        <p class="stat-number" id="meta-semanal">
+                            16
+                        </p>
+
+                        <span>Videos por semana</span>
+
+                    </article>
+
+
+
+                    <!-- VIDEOS PUBLICADOS -->
+
+                    <article class="stat-card">
+
+                        <h3>Videos publicados</h3>
+
+                        <p class="stat-number" id="videos-publicados">
+                            0
+                        </p>
+
+                        <span>Publicaciones realizadas</span>
+
+                    </article>
+
+
+
+                    <!-- TAREAS PENDIENTES -->
+
+                    <article class="stat-card">
+
+                        <h3>Tareas pendientes</h3>
+
+                        <p class="stat-number" id="tareas-pendientes">
+                            0
+                        </p>
+
+                        <span>Actividades por completar</span>
+
+                    </article>
+
+
+
+                    <!-- SISTEMA DE PUNTOS -->
+
+                    <article class="stat-card">
+
+                        <h3>Puntos obtenidos</h3>
+
+                        <p class="stat-number" id="puntos-obtenidos">
+                            0
+                        </p>
+
+                        <span>Rendimiento semanal</span>
+
+                    </article>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ==================================
+                 METAS DE PRODUCCIÓN
+            =================================== -->
+
+            <section class="dashboard-section"
+                     aria-labelledby="metas-produccion">
+
+                <div class="section-header">
+
+                    <h2 id="metas-produccion">
+                        Metas de producción
+                    </h2>
+
+                    <p>
+                        Objetivo mínimo: 16 videos semanales
+                    </p>
+
+                </div>
+
+
+                <div class="brands-grid">
+
+
+                    <!-- ABREGU PRINT -->
+
+                    <article class="brand-card">
+
+                        <h3>ABREGU PRINT</h3>
+
+                        <p class="brand-counter">
+                            <span id="abregu-publicados">0</span>
+                            / 4 videos
+                        </p>
+
+                        <progress
+                            id="progreso-abregu"
+                            value="0"
+                            max="4">
+                        </progress>
+
+                        <p>Producción y publicidad comercial</p>
+
+                    </article>
+
+
+
+                    <!-- FUZE -->
+
+                    <article class="brand-card">
+
+                        <h3>FUZE</h3>
+
+                        <p class="brand-counter">
+                            <span id="fuze-publicados">0</span>
+                            / 7 videos
+                        </p>
+
+                        <progress
+                            id="progreso-fuze"
+                            value="0"
+                            max="7">
+                        </progress>
+
+                        <p>Contenido diario y ventas</p>
+
+                    </article>
+
+
+
+                    <!-- KINTEX -->
+
+                    <article class="brand-card">
+
+                        <h3>KINTEX</h3>
+
+                        <p class="brand-counter">
+                            <span id="kintex-publicados">0</span>
+                            / 2 videos
+                        </p>
+
+                        <progress
+                            id="progreso-kintex"
+                            value="0"
+                            max="2">
+                        </progress>
+
+                        <p>Sketches y contenido publicitario</p>
+
+                    </article>
+
+
+
+                    <!-- CAEDLA -->
+
+                    <article class="brand-card">
+
+                        <h3>CAEDLA</h3>
+
+                        <p class="brand-counter">
+                            <span id="caedla-publicados">0</span>
+                            / 3 videos
+                        </p>
+
+                        <progress
+                            id="progreso-caedla"
+                            value="0"
+                            max="3">
+                        </progress>
+
+                        <p>Procesos de producción y productos</p>
+
+                    </article>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ==================================
+                 TAREAS DIARIAS Y TRANSMISIONES
+            =================================== -->
+
+            <div class="dashboard-columns">
+
+
+                <!-- TAREAS DEL DÍA -->
+
+                <section class="dashboard-section"
+                         aria-labelledby="tareas-hoy">
+
+                    <div class="section-header">
+
+                        <h2 id="tareas-hoy">
+                            Mis tareas de hoy
+                        </h2>
+
+                        <a href="pages/tareas.html">
+                            Ver todas
+                        </a>
+
+                    </div>
+
+
+                    <p id="dia-actual">
+                        Actividades programadas
+                    </p>
+
+
+                    <ul class="task-list" id="lista-tareas">
+
+                        <li>
+                            Revisar pendientes del día.
+                        </li>
+
+                        <li>
+                            Organizar grabaciones y ediciones.
+                        </li>
+
+                        <li>
+                            Revisar publicaciones pendientes.
+                        </li>
+
+                        <li>
+                            Realizar seguimiento de clientes.
+                        </li>
+
+                    </ul>
+
+                </section>
+
+
+
+                <!-- PRÓXIMOS LIVE -->
+
+                <section class="dashboard-section"
+                         aria-labelledby="proximos-lives">
+
+                    <div class="section-header">
+
+                        <h2 id="proximos-lives">
+                            Próximos LIVE
+                        </h2>
+
+                        <a href="pages/lives.html">
+                            LIVE Control
+                        </a>
+
+                    </div>
+
+
+                    <div class="live-list">
+
+
+                        <article class="live-item">
+
+                            <span>LUNES - 6:00 PM</span>
+
+                            <h3>Programa Jóvenes</h3>
+
+                            <p>Juan Infante</p>
+
+                        </article>
+
+
+                        <article class="live-item">
+
+                            <span>LUNES - 7:00 PM</span>
+
+                            <h3>JUJU</h3>
+
+                            <p>Abregu Print</p>
+
+                        </article>
+
+
+                        <article class="live-item">
+
+                            <span>MARTES - POR CONFIRMAR</span>
+
+                            <h3>Mujeres Emprendedoras</h3>
+
+                            <p>Juan Infante</p>
+
+                        </article>
+
+
+                        <article class="live-item">
+
+                            <span>VIERNES - POR CONFIRMAR</span>
+
+                            <h3>INTEPA</h3>
+
+                            <p>Transmisión desde el estudio</p>
+
+                        </article>
+
+
+                    </div>
+
+                </section>
+
+
+            </div>
+
+
+
+            <!-- ==================================
+                 ACCIONES RÁPIDAS
+            =================================== -->
+
+            <section class="dashboard-section"
+                     aria-labelledby="acciones-rapidas">
+
+                <div class="section-header">
+
+                    <h2 id="acciones-rapidas">
+                        Acciones rápidas
+                    </h2>
+
+                    <p>Accede a las herramientas principales</p>
+
+                </div>
+
+
+                <div class="quick-actions">
+
+                    <a href="pages/produccion.html"
+                       class="action-card">
+                        Nueva producción
+                    </a>
+
+                    <a href="pages/tareas.html"
+                       class="action-card">
+                        Mis tareas
+                    </a>
+
+                    <a href="pages/lives.html"
+                       class="action-card">
+                        Preparar LIVE
+                    </a>
+
+                    <a href="pages/clientes.html"
+                       class="action-card">
+                        Clientes y ventas
+                    </a>
+
+                    <a href="pages/asistencia.html"
+                       class="action-card">
+                        Registrar asistencia
+                    </a>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ==================================
+                 PIE DE PÁGINA
+            =================================== -->
+
+            <footer class="main-footer">
+
+                <p>
+                    ABREGU STUDIOS
+                </p>
+
+                <span>
+                    Sistema de gestión de producción audiovisual
+                </span>
+
+                <small>
+                    Administrador principal: SAMGIUK INGA
+                </small>
+
+            </footer>
+
+
+        </main>
+
+    </div>
+
+<!-- JAVASCRIPT PRINCIPAL -->
+<script src="assets/js/script.js" defer></script>
+
+</body>
+</html>
