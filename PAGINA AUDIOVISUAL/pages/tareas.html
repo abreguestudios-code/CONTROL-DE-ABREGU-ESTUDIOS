@@ -1,0 +1,887 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <style>
+    html {
+        visibility: hidden;
+    }
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Gestión de tareas de Abregu Studios.">
+
+    <title>Mis tareas | Abregu Studios</title>
+
+    <!-- CSS PRINCIPAL -->
+    <link rel="stylesheet"
+          href="../assets/css/styles.css">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- ===================================
+         MENÚ LATERAL
+    ==================================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <img
+                src="../assets/img/logo-audiovisual.png"
+                alt="Abregu Studios"
+                class="logo-img"
+            >
+
+            <p>Sistema de gestión audiovisual</p>
+
+        </div>
+
+        <nav class="sidebar-nav"
+             aria-label="Menú principal">
+
+            <p class="nav-title">PRINCIPAL</p>
+
+            <a href="../index.html" class="nav-item">
+                Resumen
+            </a>
+
+            <a href="produccion.html" class="nav-item">
+                Producción audiovisual
+            </a>
+
+            <a href="lives.html" class="nav-item">
+                LIVE Control
+            </a>
+
+            <a href="tareas.html"
+               class="nav-item active"
+               aria-current="page">
+                Mis tareas
+            </a>
+
+            <a href="agenda.html" class="nav-item">
+                Agenda semanal
+            </a>
+
+            <p class="nav-title">ADMINISTRACIÓN</p>
+
+            <a href="clientes.html" class="nav-item">
+                Clientes y ventas
+            </a>
+
+            <a href="inventario.html" class="nav-item">
+                Inventario
+            </a>
+
+            <a href="asistencia.html" class="nav-item">
+                Control de asistencia
+            </a>
+
+            <a href="informes.html" class="nav-item">
+                Informes y puntos
+            </a>
+
+            <a href="presupuesto.html" class="nav-item">
+    Presupuesto y rentabilidad
+</a>
+
+            <p class="nav-title">SISTEMA</p>
+
+            <a href="equipo.html" class="nav-item">
+                Equipo y permisos
+            </a>
+
+            <a href="configuracion.html" class="nav-item">
+                Configuración
+            </a>
+
+        </nav>
+
+        <div class="sidebar-profile">
+
+            <div class="profile-avatar">SI</div>
+
+            <div class="profile-info">
+
+                <h3>SAMGIUK INGA</h3>
+
+                <p>Productor audiovisual principal</p>
+
+                <span>Administrador principal</span>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ===================================
+         CONTENIDO PRINCIPAL
+    ==================================== -->
+
+    <main class="main-content">
+
+        <!-- ENCABEZADO -->
+
+        <header class="main-header">
+
+            <div class="header-title">
+
+                <p class="subtitle">
+                    ORGANIZACIÓN Y PLANIFICACIÓN
+                </p>
+
+                <h1>Mis tareas</h1>
+
+                <p>
+                    Organiza tus actividades,
+                    controla tus horarios y
+                    cumple tus objetivos diarios.
+                </p>
+
+            </div>
+
+            <div class="header-date">
+
+                <span>Fecha de trabajo</span>
+
+                <strong id="fecha-tareas">
+                    Pendiente de activar
+                </strong>
+
+            </div>
+
+        </header>
+
+
+        <!-- ===================================
+             INDICADORES
+        ==================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <h2>Rendimiento del día</h2>
+
+                <p>Control de actividades</p>
+
+            </div>
+
+            <div class="stats-grid">
+
+                <article class="stat-card">
+
+                    <h3>Tareas programadas</h3>
+
+                    <p class="stat-number"
+                       id="total-tareas">0</p>
+
+                    <span>Actividades del día</span>
+
+                </article>
+
+                <article class="stat-card">
+
+                    <h3>Completadas</h3>
+
+                    <p class="stat-number"
+                       id="tareas-completadas">0</p>
+
+                    <span>Actividades terminadas</span>
+
+                </article>
+
+                <article class="stat-card">
+
+                    <h3>Pendientes</h3>
+
+                    <p class="stat-number"
+                       id="tareas-sin-completar">0</p>
+
+                    <span>Actividades por realizar</span>
+
+                </article>
+
+                <article class="stat-card">
+
+                    <h3>Puntos del día</h3>
+
+                    <p class="stat-number"
+                       id="puntos-dia">0</p>
+
+                    <span>3 puntos por tarea</span>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================
+             CONFIGURACIÓN DE LA JORNADA
+        ==================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <h2>Mi jornada de trabajo</h2>
+
+                <p>Organiza tus horarios</p>
+
+            </div>
+
+            <div class="production-form">
+
+                <div class="form-group">
+
+                    <label for="tipo-jornada">
+                        Tipo de jornada
+                    </label>
+
+                    <select id="tipo-jornada" disabled>
+
+                        <option value="instituto">
+                            Día con instituto
+                        </option>
+
+                        <option value="completa">
+                            Jornada completa
+                        </option>
+
+                        <option value="especial">
+                            Jornada especial / LIVE
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="fecha-planificacion">
+                        Fecha a planificar
+                    </label>
+
+                    <input
+                        type="date"
+                        id="fecha-planificacion"
+                        disabled
+                    >
+
+                </div>
+
+                <p class="helper-text">
+                    Más adelante podrás seleccionar
+                    tus días de instituto y guardar
+                    horarios diferentes para cada fecha.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================
+             BLOQUES HORARIOS
+        ==================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <h2>Bloques de trabajo</h2>
+
+                <p>
+                    Distribución de tus actividades
+                    durante la jornada
+                </p>
+
+            </div>
+
+            <div id="bloques-horarios"
+                 class="productions-list">
+
+                <div class="empty-state">
+
+                    <h3>Horario por configurar</h3>
+
+                    <p>
+                        Aquí aparecerá la planificación
+                        de tu jornada, con las horas
+                        asignadas a cada actividad.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================
+             TAREAS DE HOY
+        ==================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <h2>Tareas de hoy</h2>
+
+                <p id="nombre-dia">
+                    Lista diaria de actividades
+                </p>
+
+            </div>
+
+            <div id="tareas-de-hoy"
+                 class="productions-list">
+
+                <div class="empty-state">
+
+                    <h3>Preparando tareas del día</h3>
+
+                    <p>
+                        En el siguiente paso conectaremos
+                        las tareas automáticas y
+                        las actividades que registres.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================
+             REGISTRAR NUEVA TAREA
+        ==================================== -->
+
+        <section class="dashboard-section"
+                 id="nueva-tarea">
+
+            <div class="section-header">
+
+                <h2>Nueva tarea</h2>
+
+                <p>Agregar actividad al sistema</p>
+
+            </div>
+
+            <form id="form-tarea"
+                  class="production-form">
+
+                <!-- NOMBRE -->
+
+                <div class="form-group">
+
+                    <label for="titulo-tarea">
+                        Nombre de la tarea
+                    </label>
+
+                    <input
+                        type="text"
+                        id="titulo-tarea"
+                        name="titulo"
+                        placeholder="Ej. Editar video de FUZE"
+                        maxlength="120"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- CLIENTE -->
+
+                <div class="form-group">
+
+                    <label for="cliente-tarea">
+                        Cliente / Marca
+                    </label>
+
+                    <select id="cliente-tarea"
+                            name="cliente"
+                            required>
+
+                        <option value="">
+                            Seleccionar cliente
+                        </option>
+
+                        <option value="abregu">
+                            ABREGU PRINT
+                        </option>
+
+                        <option value="fuze">
+                            FUZE
+                        </option>
+
+                        <option value="kintex">
+                            KINTEX
+                        </option>
+
+                        <option value="caedla">
+                            CAEDLA
+                        </option>
+
+                        <option value="juan-infante">
+                            JUAN INFANTE
+                        </option>
+
+                        <option value="intepa">
+                            INTEPA
+                        </option>
+
+                        <option value="general">
+                            Actividad general
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- CATEGORÍA -->
+
+                <div class="form-group">
+
+                    <label for="categoria-tarea">
+                        Tipo de actividad
+                    </label>
+
+                    <select id="categoria-tarea"
+                            name="categoria"
+                            required>
+
+                        <option value="">
+                            Seleccionar actividad
+                        </option>
+
+                        <option value="grabacion">
+                            Grabación
+                        </option>
+
+                        <option value="edicion">
+                            Edición
+                        </option>
+
+                        <option value="publicacion">
+                            Publicación
+                        </option>
+
+                        <option value="live">
+                            Transmisión en vivo
+                        </option>
+
+                        <option value="ventas">
+                            Ventas y clientes
+                        </option>
+
+                        <option value="diseno">
+                            Diseño gráfico
+                        </option>
+
+                        <option value="organizacion">
+                            Organización
+                        </option>
+
+                        <option value="mantenimiento">
+                            Equipos y mantenimiento
+                        </option>
+
+                        <option value="otro">
+                            Otra actividad
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- PRIORIDAD -->
+
+                <div class="form-group">
+
+                    <label for="prioridad-tarea">
+                        Prioridad
+                    </label>
+
+                    <select id="prioridad-tarea"
+                            name="prioridad">
+
+                        <option value="normal">
+                            Normal
+                        </option>
+
+                        <option value="alta">
+                            Alta
+                        </option>
+
+                        <option value="urgente">
+                            Urgente
+                        </option>
+
+                        <option value="baja">
+                            Baja
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- FECHA -->
+
+                <div class="form-group">
+
+                    <label for="fecha-tarea">
+                        Fecha programada
+                    </label>
+
+                    <input
+                        type="date"
+                        id="fecha-tarea"
+                        name="fecha"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- HORA DE INICIO -->
+
+                <div class="form-group">
+
+                    <label for="hora-inicio-tarea">
+                        Hora de inicio
+                    </label>
+
+                    <input
+                        type="time"
+                        id="hora-inicio-tarea"
+                        name="horaInicio"
+                    >
+
+                </div>
+
+
+                <!-- HORA DE FINALIZACIÓN -->
+
+                <div class="form-group">
+
+                    <label for="hora-fin-tarea">
+                        Hora de finalización
+                    </label>
+
+                    <input
+                        type="time"
+                        id="hora-fin-tarea"
+                        name="horaFin"
+                    >
+
+                </div>
+
+
+                <!-- REPETICIÓN -->
+
+                <div class="form-group">
+
+                    <label for="repeticion-tarea">
+                        Frecuencia
+                    </label>
+
+                    <select id="repeticion-tarea"
+                            name="repeticion">
+
+                        <option value="una-vez">
+                            Una sola vez
+                        </option>
+
+                        <option value="diaria">
+                            Todos los días
+                        </option>
+
+                        <option value="semanal">
+                            Todas las semanas
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- DESCRIPCIÓN -->
+
+                <div class="form-group">
+
+                    <label for="descripcion-tarea">
+                        Descripción / Indicaciones
+                    </label>
+
+                    <textarea
+                        id="descripcion-tarea"
+                        name="descripcion"
+                        rows="5"
+                        placeholder="Describe qué debes hacer y qué necesitas para completar esta tarea."
+                    ></textarea>
+
+                </div>
+
+
+                <!-- BOTONES -->
+
+                <div class="form-actions">
+
+                    <button type="submit"
+                            id="guardar-tarea"
+                            disabled>
+                        Guardar tarea
+                    </button>
+
+                    <button type="reset">
+                        Limpiar formulario
+                    </button>
+
+                </div>
+
+                <p class="helper-text">
+                    El guardado se activará
+                    cuando creemos tareas.js.
+                </p>
+
+            </form>
+
+        </section>
+
+
+        <!-- ===================================
+             TODAS MIS TAREAS
+        ==================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <h2>Todas mis tareas</h2>
+
+                <p>Seguimiento y administración</p>
+
+            </div>
+
+            <div class="production-filters">
+
+                <label for="filtro-estado-tarea">
+                    Estado
+                </label>
+
+                <select id="filtro-estado-tarea"
+                        disabled>
+
+                    <option value="todas">
+                        Todas
+                    </option>
+
+                    <option value="pendiente">
+                        Pendientes
+                    </option>
+
+                    <option value="completada">
+                        Completadas
+                    </option>
+
+                </select>
+
+
+                <label for="filtro-cliente-tarea">
+                    Marca
+                </label>
+
+                <select id="filtro-cliente-tarea"
+                        disabled>
+
+                    <option value="todas">
+                        Todas las marcas
+                    </option>
+
+                    <option value="abregu">
+                        Abregu Print
+                    </option>
+
+                    <option value="fuze">FUZE</option>
+
+                    <option value="kintex">KINTEX</option>
+
+                    <option value="caedla">CAEDLA</option>
+
+                    <option value="juan-infante">
+                        Juan Infante
+                    </option>
+
+                    <option value="intepa">INTEPA</option>
+
+                    <option value="general">
+                        General
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div id="lista-todas-tareas"
+                 class="productions-list">
+
+                <div class="empty-state">
+
+                    <h3>No hay tareas registradas</h3>
+
+                    <p>
+                        Tus tareas personalizadas
+                        aparecerán aquí.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================
+             RUTINA SEMANAL
+        ==================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <h2>Rutina semanal de referencia</h2>
+
+                <p>
+                    Actividades habituales del área
+                    audiovisual
+                </p>
+
+            </div>
+
+            <div class="productions-list">
+
+                <article class="production-card">
+
+                    <h3>LUNES — LIVE</h3>
+
+                    <p>
+                        Preparar estudio, cámaras,
+                        iluminación, audio y OBS.
+                    </p>
+
+                    <p>
+                        6:00 p. m. — Jóvenes
+                    </p>
+
+                    <p>
+                        7:00 p. m. — JUJU
+                    </p>
+
+                </article>
+
+
+                <article class="production-card">
+
+                    <h3>MIÉRCOLES — PREPRODUCCIÓN</h3>
+
+                    <p>
+                        Preparar guiones de KINTEX,
+                        coordinar CAEDLA y revisar
+                        equipos para el jueves.
+                    </p>
+
+                </article>
+
+
+                <article class="production-card">
+
+                    <h3>JUEVES — GRABACIONES</h3>
+
+                    <p>
+                        Primera jornada: KINTEX.
+                        Grabación de sketches.
+                    </p>
+
+                    <p>
+                        Segunda jornada: CAEDLA.
+                        Procesos de producción.
+                    </p>
+
+                </article>
+
+
+                <article class="production-card">
+
+                    <h3>VIERNES — EDICIÓN Y LIVE</h3>
+
+                    <p>
+                        Editar contenidos grabados
+                        y preparar publicaciones.
+                    </p>
+
+                    <p>
+                        Coordinar FUZE e INTEPA
+                        sin cruzar transmisiones.
+                    </p>
+
+                </article>
+
+            </div>
+
+            <p class="helper-text">
+                Esta rutina es orientativa.
+                Los horarios exactos dependerán
+                de tus clases, grabaciones y
+                transmisiones confirmadas.
+            </p>
+
+        </section>
+
+
+        <!-- ===================================
+             PIE DE PÁGINA
+        ==================================== -->
+
+        <footer class="main-footer">
+
+            <p>ABREGU STUDIOS</p>
+
+            <span>
+                Gestión de tareas y planificación
+            </span>
+
+            <small>
+                Administrador: SAMGIUK INGA
+            </small>
+
+        </footer>
+
+    </main>
+
+</div>
+
+<!-- JAVASCRIPT DE MIS TAREAS -->
+<script src="../assets/js/tareas.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+<script src="../assets/js/supabase.js" defer></script>
+<script src="../assets/js/auth-guard.js" defer></script>
+</body>
+</html>
