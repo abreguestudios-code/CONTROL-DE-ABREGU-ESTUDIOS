@@ -1,0 +1,938 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <style>
+    html {
+        visibility: hidden;
+    }
+</style>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Configuración de Abregu Studios">
+
+    <title>Configuración | Abregu Studios</title>
+
+    <link rel="stylesheet"
+          href="../assets/css/styles.css">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- ===================================
+         MENU LATERAL
+    ==================================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <img
+                src="../assets/img/logo-audiovisual.png"
+                alt="Abregu Studios"
+                class="logo-img"
+            >
+
+            <p>Sistema de gestión audiovisual</p>
+
+        </div>
+
+        <nav class="sidebar-nav"
+             aria-label="Menú principal">
+
+            <p class="nav-title">PRINCIPAL</p>
+
+            <a href="../index.html" class="nav-item">
+                Resumen
+            </a>
+
+            <a href="produccion.html" class="nav-item">
+                Producción audiovisual
+            </a>
+
+            <a href="lives.html" class="nav-item">
+                LIVE Control
+            </a>
+
+            <a href="tareas.html" class="nav-item">
+                Mis tareas
+            </a>
+
+            <a href="agenda.html" class="nav-item">
+                Agenda semanal
+            </a>
+
+            <p class="nav-title">ADMINISTRACIÓN</p>
+
+            <a href="clientes.html" class="nav-item">
+                Clientes y ventas
+            </a>
+
+            <a href="inventario.html" class="nav-item">
+                Inventario
+            </a>
+
+            <a href="asistencia.html" class="nav-item">
+                Control de asistencia
+            </a>
+
+            <a href="informes.html" class="nav-item">
+                Informes y puntos
+            </a>
+
+            <a href="presupuesto.html" class="nav-item">
+    Presupuesto y rentabilidad
+</a>
+
+            <p class="nav-title">SISTEMA</p>
+
+            <a href="equipo.html" class="nav-item">
+                Equipo y permisos
+            </a>
+
+            <a href="configuracion.html"
+               class="nav-item active"
+               aria-current="page">
+                Configuración
+            </a>
+
+        </nav>
+
+        <div class="sidebar-profile">
+
+            <div class="profile-avatar">SI</div>
+
+            <div class="profile-info">
+
+                <h3>SAMGIUK INGA</h3>
+
+                <p>Productor audiovisual principal</p>
+
+                <span>Administrador principal</span>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ===================================
+         CONTENIDO PRINCIPAL
+    ==================================== -->
+
+    <main class="main-content">
+
+        <!-- ENCABEZADO -->
+
+        <header class="main-header">
+
+            <div class="header-title">
+
+                <p class="subtitle">
+                    ADMINISTRACIÓN DEL SISTEMA
+                </p>
+
+                <h1>Configuración</h1>
+
+                <p>
+                    Administra las preferencias,
+                    los objetivos, los horarios
+                    y la información del sistema.
+                </p>
+
+            </div>
+
+            <div class="header-date">
+
+                <span>Administrador</span>
+
+                <strong>SAMGIUK INGA</strong>
+
+            </div>
+
+        </header>
+
+
+        <!-- ===================================
+             ESTADO DEL SISTEMA
+        ==================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <h2>Estado del sistema</h2>
+
+                <p>Información general de la plataforma</p>
+
+            </div>
+
+            <div class="stats-grid">
+
+                <article class="stat-card">
+
+                    <h3>Versión</h3>
+
+                    <p class="stat-number">1.0</p>
+
+                    <span>Versión inicial</span>
+
+                </article>
+
+                <article class="stat-card">
+
+                    <h3>Almacenamiento</h3>
+
+                    <p class="stat-number"
+                       id="estado-almacenamiento">
+                        Local
+                    </p>
+
+                    <span>Datos en el navegador</span>
+
+                </article>
+
+                <article class="stat-card">
+
+                    <h3>Base de datos</h3>
+
+                    <p class="stat-number"
+                       id="estado-base-datos">
+                        No
+                    </p>
+
+                    <span>Supabase no conectado</span>
+
+                </article>
+
+                <article class="stat-card">
+
+                    <h3>Usuarios</h3>
+
+                    <p class="stat-number"
+                       id="estado-usuarios">
+                        1
+                    </p>
+
+                    <span>Perfil local de referencia</span>
+
+                </article>
+
+            </div>
+
+            <p class="helper-text">
+                Esta versión funciona localmente.
+                La autenticación, sincronización
+                y base de datos se incorporarán
+                en una etapa posterior.
+            </p>
+
+        </section>
+
+
+        <!-- ===================================
+             CONFIGURACIÓN GENERAL
+        ==================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <h2>Información general</h2>
+
+                <p>Identidad del sistema audiovisual</p>
+
+            </div>
+
+            <form id="form-config-general"
+                  class="production-form">
+
+                <div class="form-group">
+
+                    <label for="config-nombre">
+                        Nombre del sistema
+                    </label>
+
+                    <input
+                        type="text"
+                        id="config-nombre"
+                        value="ABREGU STUDIOS"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="config-empresa">
+                        Empresa principal
+                    </label>
+
+                    <input
+                        type="text"
+                        id="config-empresa"
+                        value="ABREGU PRINT"
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="config-responsable">
+                        Responsable
+                    </label>
+
+                    <input
+                        type="text"
+                        id="config-responsable"
+                        value="SAMGIUK INGA"
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="config-cargo">
+                        Cargo
+                    </label>
+
+                    <input
+                        type="text"
+                        id="config-cargo"
+                        value="Productor audiovisual principal"
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="config-zona">
+                        Zona horaria
+                    </label>
+
+                    <select id="config-zona">
+
+                        <option value="America/Lima">
+                            Perú — America/Lima
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-actions">
+
+                    <button
+                        type="submit"
+                        id="guardar-config-general"
+                        disabled>
+                        Guardar configuración
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- ===================================
+             METAS DE PRODUCCIÓN
+        ==================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <h2>Metas de producción</h2>
+
+                <p>Objetivos semanales de publicaciones</p>
+
+            </div>
+
+            <form id="form-config-metas"
+                  class="production-form">
+
+                <div class="form-group">
+
+                    <label for="meta-abregu">
+                        ABREGU PRINT — Videos semanales
+                    </label>
+
+                    <input
+                        type="number"
+                        id="meta-abregu"
+                        min="0"
+                        max="100"
+                        value="4"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="meta-fuze">
+                        FUZE — Videos semanales
+                    </label>
+
+                    <input
+                        type="number"
+                        id="meta-fuze"
+                        min="0"
+                        max="100"
+                        value="7"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="meta-kintex">
+                        KINTEX — Videos semanales
+                    </label>
+
+                    <input
+                        type="number"
+                        id="meta-kintex"
+                        min="0"
+                        max="100"
+                        value="2"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="meta-caedla">
+                        CAEDLA — Videos semanales
+                    </label>
+
+                    <input
+                        type="number"
+                        id="meta-caedla"
+                        min="0"
+                        max="100"
+                        value="3"
+                        required
+                    >
+
+                </div>
+
+                <div class="production-card">
+
+                    <h3>Objetivo semanal actual</h3>
+
+                    <p class="stat-number"
+                       id="meta-total-config">
+                        16
+                    </p>
+
+                    <p>
+                        Videos semanales entre
+                        las cuatro marcas.
+                    </p>
+
+                </div>
+
+                <div class="form-actions">
+
+                    <button
+                        type="submit"
+                        id="guardar-config-metas"
+                        disabled>
+                        Guardar metas
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- ===================================
+             SISTEMA DE PUNTOS
+        ==================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <h2>Reglas de puntuación</h2>
+
+                <p>Reconocimiento de actividades</p>
+
+            </div>
+
+            <form id="form-config-puntos"
+                  class="production-form">
+
+                <div class="form-group">
+
+                    <label for="puntos-video-config">
+                        Puntos por video publicado
+                    </label>
+
+                    <input
+                        type="number"
+                        id="puntos-video-config"
+                        min="0"
+                        max="1000"
+                        value="10"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="puntos-tarea-config">
+                        Puntos por tarea completada
+                    </label>
+
+                    <input
+                        type="number"
+                        id="puntos-tarea-config"
+                        min="0"
+                        max="1000"
+                        value="3"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="config-inicio-semana">
+                        Inicio de semana
+                    </label>
+
+                    <select id="config-inicio-semana">
+
+                        <option value="lunes">
+                            Lunes
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-actions">
+
+                    <button
+                        type="submit"
+                        id="guardar-config-puntos"
+                        disabled>
+                        Guardar puntuaciones
+                    </button>
+
+                </div>
+
+                <p class="helper-text">
+                    Los LIVE y las horas trabajadas
+                    se registran sin puntos adicionales.
+                </p>
+
+            </form>
+
+        </section>
+
+
+        <!-- ===================================
+             HORARIOS LABORALES
+        ==================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <h2>Horarios laborales</h2>
+
+                <p>Jornadas de referencia del responsable</p>
+
+            </div>
+
+            <form id="form-config-horarios"
+                  class="production-form">
+
+                <h3>Jornada completa</h3>
+
+                <div class="form-group">
+
+                    <label for="horario-completo-inicio">
+                        Hora de entrada
+                    </label>
+
+                    <input
+                        type="time"
+                        id="horario-completo-inicio"
+                        value="10:30"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="horario-completo-fin">
+                        Hora habitual de salida
+                    </label>
+
+                    <input
+                        type="time"
+                        id="horario-completo-fin"
+                        value="20:00"
+                        required
+                    >
+
+                </div>
+
+                <h3>Jornada con instituto</h3>
+
+                <div class="form-group">
+
+                    <label for="horario-instituto-inicio">
+                        Inicio del trabajo efectivo
+                    </label>
+
+                    <input
+                        type="time"
+                        id="horario-instituto-inicio"
+                        value="14:00"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="horario-instituto-fin">
+                        Hora habitual de salida
+                    </label>
+
+                    <input
+                        type="time"
+                        id="horario-instituto-fin"
+                        value="20:00"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="config-almuerzo">
+                        Duración de descanso habitual
+                        (minutos)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="config-almuerzo"
+                        value="60"
+                        min="0"
+                        max="240"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-actions">
+
+                    <button
+                        type="submit"
+                        id="guardar-config-horarios"
+                        disabled>
+                        Guardar horarios
+                    </button>
+
+                </div>
+
+                <p class="helper-text">
+                    Los registros reales de asistencia
+                    siempre tendrán prioridad sobre
+                    los horarios de referencia.
+                </p>
+
+            </form>
+
+        </section>
+
+
+        <!-- ===================================
+             RESPALDOS DE INFORMACIÓN
+        ==================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <h2>Copias de seguridad</h2>
+
+                <p>Protección de la información registrada</p>
+
+            </div>
+
+            <div class="productions-list">
+
+                <article class="production-card">
+
+                    <h3>Exportar respaldo completo</h3>
+
+                    <p>
+                        Descargar una copia de los
+                        datos registrados en los módulos
+                        de Abregu Studios.
+                    </p>
+
+                    <p>
+                        El respaldo tendrá formato JSON
+                        y podrá utilizarse para
+                        recuperar información
+                        posteriormente.
+                    </p>
+
+                    <div class="form-actions">
+
+                        <button
+                            type="button"
+                            id="descargar-respaldo"
+                            disabled>
+                            Descargar respaldo
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article class="production-card">
+
+                    <h3>Restaurar un respaldo</h3>
+
+                    <p>
+                        Selecciona un archivo JSON
+                        previamente exportado.
+                    </p>
+
+                    <p>
+                        Antes de restaurar,
+                        el sistema deberá validar
+                        su estructura y solicitar
+                        confirmación.
+                    </p>
+
+                    <div class="form-group">
+
+                        <label for="archivo-respaldo">
+                            Seleccionar respaldo
+                        </label>
+
+                        <input
+                            type="file"
+                            id="archivo-respaldo"
+                            accept=".json,application/json"
+                            disabled
+                        >
+
+                    </div>
+
+                    <div class="form-actions">
+
+                        <button
+                            type="button"
+                            id="restaurar-respaldo"
+                            disabled>
+                            Restaurar información
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <p class="helper-text">
+                Los respaldos pueden contener
+                información interna del área.
+                Guárdalos en una ubicación segura.
+            </p>
+
+        </section>
+
+
+        <!-- ===================================
+             ESTADO DE LOS MÓDULOS
+        ==================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <h2>Módulos del sistema</h2>
+
+                <p>Resumen de funcionalidades</p>
+
+            </div>
+
+            <div class="productions-list">
+
+                <article class="production-card">
+
+                    <h3>PRODUCCIÓN AUDIOVISUAL</h3>
+
+                    <p>
+                        Registro de videos,
+                        guiones, grabaciones,
+                        edición y publicaciones.
+                    </p>
+
+                </article>
+
+                <article class="production-card">
+
+                    <h3>LIVE CONTROL</h3>
+
+                    <p>
+                        Programación de transmisiones,
+                        preparación técnica y checklists.
+                    </p>
+
+                </article>
+
+                <article class="production-card">
+
+                    <h3>MIS TAREAS Y AGENDA</h3>
+
+                    <p>
+                        Actividades, prioridades,
+                        horarios y planificación semanal.
+                    </p>
+
+                </article>
+
+                <article class="production-card">
+
+                    <h3>CLIENTES Y VENTAS</h3>
+
+                    <p>
+                        Fichas de clientes,
+                        prospectos y seguimiento comercial.
+                    </p>
+
+                </article>
+
+                <article class="production-card">
+
+                    <h3>INVENTARIO</h3>
+
+                    <p>
+                        Equipamiento, responsables,
+                        estados y revisiones.
+                    </p>
+
+                </article>
+
+                <article class="production-card">
+
+                    <h3>ASISTENCIA E INFORMES</h3>
+
+                    <p>
+                        Horas trabajadas,
+                        resultados, puntos y reportes.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================
+             SEGURIDAD
+        ==================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <h2>Seguridad y almacenamiento</h2>
+
+                <p>Información importante del sistema</p>
+
+            </div>
+
+            <article class="production-card">
+
+                <h3>Almacenamiento local</h3>
+
+                <p>
+                    Actualmente, los datos se guardan
+                    en el navegador utilizado.
+                </p>
+
+                <p>
+                    No se sincronizan automáticamente
+                    entre computadoras.
+                </p>
+
+                <p>
+                    Si se elimina el almacenamiento
+                    del sitio, podrían perderse
+                    los registros guardados.
+                </p>
+
+                <p>
+                    La futura integración con Supabase
+                    permitirá trabajar con una base
+                    de datos central y autenticación.
+                </p>
+
+            </article>
+
+        </section>
+
+
+        <!-- ===================================
+             PIE DE PÁGINA
+        ==================================== -->
+
+        <footer class="main-footer">
+
+            <p>ABREGU STUDIOS</p>
+
+            <span>
+                Configuración y administración
+                del sistema
+            </span>
+
+            <small>
+                Administrador principal:
+                SAMGIUK INGA
+            </small>
+
+        </footer>
+
+    </main>
+
+</div>
+
+<!-- JAVASCRIPT DE CONFIGURACIÓN -->
+<script src="../assets/js/configuracion.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+<script src="../assets/js/supabase.js" defer></script>
+<script src="../assets/js/auth-guard.js" defer></script>
+</body>
+</html>
